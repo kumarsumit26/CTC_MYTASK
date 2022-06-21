@@ -6,7 +6,7 @@ export default class BrokerDealsFieldTracking extends LightningElement {
     @track error;
     @track showSpinner = false;
     connectedCallback() {
-        console.log('-------------');
+        console.log('-----Test Git--------');
         this.showSpinner = true;
         console.log('this.showSpinner...' + this.showSpinner);
         getLoanstatusFromFeed().then(result => {
