@@ -1,0 +1,128 @@
+<template>
+    <!-- <template for:each={menuItems} for:item="menuItem">
+        <div key={menuItem.Id}>
+            <a onclick={navigateToMenu} data-menu-item-id={menuItem.id}>{menuItem.label} </a>
+             <a>{menuItem.subMenu}</a><br /> 
+        </div>
+
+    </template> -->
+    <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical navMargin showDeskTop">
+        <ul  class="navContainer" style="margin-top: 42px;">
+        <div class="slds-p-around_small setNavg">
+            Navigation
+        </div>
+        <template for:each={menuItems} for:item="menuItem">
+            <div key={menuItem.Id}>
+
+                <c-child-navigation item={menuItem} onnavigateto1={handleNavigation} key= {menuItem.Id}>
+
+                </c-child-navigation>
+            </div>
+
+        </template>
+    </ul>
+    </div>
+
+    <!-- <ul onclick={onClickParent}>
+        <div>
+            Navigation
+        </div>
+        <template for:each={menuItems} for:item="menuItem">
+            <div key={menuItem.label}>
+            <template if:true={menuItem.subMenu}>
+                <li >
+                    <a data-menu-item-id={menuItem.id} onclick= {navigateToMenu}>
+                        <template if:true={menuItem.active}>
+                            <template if:true={labelHome}>
+                                <a>
+
+                                </a>
+                                &nbsp;&nbsp; {menuItem.label}
+                               <p>{label}</p>
+
+                            </template>
+                        </template>
+                        <template if:false={menuItem.active}>
+                            <template if:true={labelHome}>
+                                <a>
+
+                                </a>
+                                &nbsp;&nbsp; {menuItem.label}
+                                <p>{label}</p>
+
+                            </template>
+                        </template>
+
+                        <template if:true={menuItem.active}>
+                            <template if:true={labelDeal}>
+                                <a>
+
+                                </a>
+                                &nbsp;&nbsp; {menuItem.label}
+
+                            </template>
+                        </template>
+                        <template if:false={menuItem.active}>
+                            <template if:true={labelDeal}>
+                                <a>
+
+                                </a>
+                                &nbsp;&nbsp; {menuItem.label}
+
+                            </template>
+                        </template>
+
+                    </a>
+
+                </li>
+            </template>
+            <template if:false= {menuItem.subMenu}>
+                <li onclick= {navigateToMenu}>
+                    <a data-menu-item-id={menuItem.id}>
+                        <template if:true={menuItem.active}>
+                            <template if:true={labelHome}>
+                                <a>
+
+                                </a>
+                                &nbsp;&nbsp; 
+                                {menuItem.label}
+                                {label}
+
+                            </template>
+                        </template>
+                        <template if:false={menuItem.active}>
+                            <template if:true={labelHome}>
+                                <a>
+
+                                </a>
+                                &nbsp;&nbsp; {menuItem.label}
+                                {label}
+
+                            </template>
+                        </template>
+
+                        <template if:true={menuItem.active}>
+                            <template if:true={labelDeal}>
+                                <a>
+
+                                </a>
+                                &nbsp;&nbsp; {menuItem.label}
+
+                            </template>
+                        </template>
+                        <template if:false={menuItem.active}>
+                            <template if:true={labelDeal}>
+                                <a>
+
+                                </a>
+                                &nbsp;&nbsp; {menuItem.label}
+
+                            </template>
+                        </template>
+                    </a>
+                </li>
+            </template>
+        </div>
+        </template>
+    </ul> -->
+</template>

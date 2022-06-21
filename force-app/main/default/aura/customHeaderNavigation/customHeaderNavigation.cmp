@@ -1,0 +1,8 @@
+<aura:component access="global"
+    extends="forceCommunity:navigationMenuBase"
+    implements="forceCommunity:availableForAllPageTypes">
+   
+    <!-- CALL LWC NAVIGATION COMPONENT -->
+    <c:cTC_HomePageHeader menuItems="{!v.menuItems}" onnavigateto="{!c.handleNavigation}"/>
+ 
+</aura:component>

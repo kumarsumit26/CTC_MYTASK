@@ -1,0 +1,117 @@
+.drop {
+    display: block;
+    font-size: .75rem;
+    background-color: white;
+}
+
+.dropdown {
+    font-size: .75rem;
+    width: 95px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.styleName {
+    font-size: .75rem;
+    font-family: 'Calibri';
+    color: #000000;
+    text-align: left;
+}
+
+.showMobile {
+    display: none;
+}
+
+.icn {
+    height: 16px;
+    width: 16px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    fill: #dc0000;
+}
+
+.feedbackopt>a {
+    display: block;
+    cursor: pointer;
+    color: rgb(51, 51, 51);
+    padding: 5px 10px;
+    line-height: 32px;
+    font-size: .75rem;
+
+    
+}
+
+.feedbackopt>a:hover,
+.feedbackopt>a:focus,
+.feedbackopt>a:active {
+    text-decoration: unset;
+}
+
+.userInfo {
+    position: relative;
+    cursor: pointer;
+
+}
+
+.customDropdown {
+    position: absolute;
+    bottom: 1px;
+    right: 60px;
+    background-color: #fff;
+    padding-right: 27px;
+}
+
+ul li a {
+    color: #454545;
+}
+
+.customDropdown li a {
+    padding: 4px 8px;
+    display: block;
+    line-height: 25px;
+    font-size: .75rem;
+}
+.customDropdown li a:hover {
+    background-color: #eee;
+}
+
+.actionMenu{
+     border: 1px solid #eee;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 768px) {
+
+    .showUserName {
+        display: none;
+    }
+
+    .showMobile {
+        display: block;
+    }
+
+    .styleName {
+        font-size: .75rem;
+        font-family: 'Calibri';
+        color: #000000;
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width : 769px) and (max-width : 1024px) {
+    .showUserName {
+        display: none;
+    }
+
+    .showMobile {
+        display: block;
+    }
+
+    .styleName {
+        font-size: .75rem;
+        font-family: 'Calibri';
+        color: #000000;
+        text-align: left;
+    }
+}

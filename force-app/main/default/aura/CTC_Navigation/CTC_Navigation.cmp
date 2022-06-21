@@ -1,0 +1,7 @@
+<aura:component access="global"
+    extends="forceCommunity:navigationMenuBase"
+    implements="forceCommunity:availableForAllPageTypes">
+   
+    <!-- CALL LWC NAVIGATION COMPONENT -->
+    <c:lwcNavigation menuItems="{!v.menuItems}" onnavigateto="{!c.handleNavigation}"/>
+</aura:component>

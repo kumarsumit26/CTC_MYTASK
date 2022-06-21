@@ -1,0 +1,198 @@
+.mainHeader {
+    background: #fff;
+    padding: 18px 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+.deskTopIcon , .searchICon, .searchDesktop {
+    display: none;
+}
+.headerPart {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.mobileLogo {
+    flex: 0 0 23%;
+}
+.showSearch  {
+    flex: 0 0 40%;
+}
+.notifications {
+    flex: 0 0 180px;
+    margin-left: auto;
+}
+.notifications > li {
+    float: left;
+    line-height: 30px;
+}
+.notifications > li.setProfile {
+    position:relative;
+}
+.notifications > li svg {
+    width:20px;
+    height:20px;
+}
+.notifications > li .showMobile svg {
+    width:15px;
+    height:15px;
+}
+.notifications > li:not(:first-child) {
+    margin-left:20px;
+}
+.actionMenu ul.scrollable li a {
+    padding:5px 10px;
+    line-height:24px;
+}
+.div:focus {
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    background:none !important;
+}
+a:focus {
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    background:none !important;
+}
+li:focus {
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    background:none !important;
+}
+.navMargin {
+    position: fixed; margin: 24px 0px 0px 0px;width:23%; float:left;background: #F4F4F5;
+}
+.setNavigationHeader{
+    height: 64px;
+    background-color: #FFFFFF;
+}
+.setSize {
+    position:relative;
+}
+.sub-menu {
+    position:absolute;
+    right:10px;
+}
+.setSubMenu {
+    background: none !important;
+}
+.slds-modal__container {
+    padding:0px!important;
+    margin:0px!important;
+}
+.navContainer {
+    float: left;
+    background: #4E4E4E!important;
+    color: #fff!important;
+    min-height:960px;
+}
+.showDropDown{
+    background-color: #4E4D4E!important;
+    color: #fff!important;
+    margin-left: 8px;
+}
+.slds-is-active {
+    color: #FFFFFF !important;
+    background: #373737 0% 0% no-repeat padding-box;
+}
+.lds-text-link--reset{
+    background:#373737 !important;
+}
+.navContainer li a{
+    background: none !important;
+}
+a:hover{
+    text-decoration: unset;
+}
+.slds-navigation-list--vertical__action{
+    font-size:16px;
+    font-family: 'Calibri' !important;
+    color: #E2E2E2 !important;
+}
+.setSizesubItem{
+    font-size:16px;
+    font-family: 'Calibri' !important;
+    color: #E2E2E2 !important;
+}
+.setSizesubItem a{
+    background:none !important;
+}
+.slds-text-link--reset{
+    border-top: #000000 !important;
+    border-bottom: #000000 !important;
+    border-inline-start: #000000 !important;
+}
+.slds-is-active a{
+    background:none !important;
+}
+.setNavg{
+    text-align: left;
+    font-family: 'Calibri';
+    letter-spacing: 0.7px;
+    color: #E2E2E2;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) 
+    {
+    
+    .actionMenu ul.scrollable li a {
+        padding:5px 10px;
+        line-height:24px;
+    }
+    .responsiveHeader{
+        width:50%;
+    }
+    
+}
+@media only screen and (max-device-width : 767px){
+    .deskTopIcon , .searchICon, .searchDesktop {
+        display: block;
+    }
+    .hideSerach {
+        display:none;
+    }
+    .notifications {
+        flex: 0 0 130px;
+        margin-left: auto;
+    }
+    .mobileLogo {
+        display:none;
+    }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+    .deskTopIcon , .searchICon, .searchDesktop {
+        display: block;
+    }
+    .hideSerach {
+        display:none;
+    }
+    .mobileLogo {
+        flex: 0 0 69%;
+        text-align:center
+    }
+    .notifications {
+        flex: 0 0 180px;
+        margin-left: auto;
+    }
+    .THIS .notifications>li:not(:first-child) {
+        margin-left: 25px;
+    }
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1324px) {
+    .mobileLogo {
+        flex: 0 0 23%;
+        text-align:left;
+    }
+    .notifications {
+        flex: 0 0 180px;
+        margin-left: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .responsiveHeader, .custombackDrop {
+        display:none;
+    }
+}

@@ -1,0 +1,17 @@
+<template>
+    <article class="slds-card cardDetails">
+        <h1 class="date">{updateddate}</h1>
+        <template if:true={parentid}>
+            <b class="Values">{item.Title}</b>&nbsp;
+        </template>
+        <template if:false={parentid}>
+            <a href="javascript:void(0);" onclick={navigateToRecord} name={}>
+            <b class="text">{item.Title} - Loan Status Change</b></a><br /><br />
+            <b class="Values ">Loan Status value on {item.Title} {custombody}</b>
+            <br />
+            <br />
+        </template>
+
+
+    </article>
+</template>

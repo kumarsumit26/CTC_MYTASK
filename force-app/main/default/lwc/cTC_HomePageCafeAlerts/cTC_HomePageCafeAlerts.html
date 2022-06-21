@@ -1,0 +1,114 @@
+<template>
+    <template if:true={totalRecords}>
+        <div class="divWidth">
+            <!-- <template if:true={showSpinner}>
+                <div class="backgroundInverse">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+            </template>  -->
+            <div class="cafeAlters">
+                <div class="title">
+                    <h1 class="setAlerts">
+                        CTC Café Alerts
+                    </h1>
+                </div>
+                <div class="customScrollBar">
+                    <div class="all_alerts">
+                        <!-- <template for:each={alertsHistoryList} for:item='allAlert'>
+                                    <div key={alertsHistoryList.id}> -->
+                        <!-- <template if:true={allAlert.Title__c}> -->
+                        <template for:each={allAlerts} for:item="all">
+                            <div key={all.id}>
+                                <template if:true={allTitle}>
+                                    <div class="url_alert">
+                                        <a target="_blank" href={all.URL__c}>{all.Title__c}</a>
+                                        <p class="values">{all.Message__c} </p>
+                                    </div>
+                                </template>
+                                <template if:false={allTitle}>
+                                    <div class="url_alert">
+                                        <p class="values ">{all.Message__c} </p>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                        <!-- </template> -->
+                        <!-- </div>
+                                </template> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>
+
+
+<!-- <aura:if isTrue="{!v.totalRecords > 0}">
+    <div class="divWidth">
+        <aura:if isTrue="{!v.showSpinner}">
+            <div class="backgroundInverse">
+                <lightning:spinner alternativeText="Loading" size="small"/>
+            </div>
+            <aura:set attribute="else">
+                <div class="cafeAlters">
+                    <div class="title">
+                        <h1 class="setAlerts">
+                            {!v.alertComponentName}
+                      {!$Label.c.CTC_AlertCmp_Header} 
+                        </h1>
+                    </div>
+                    <div class="customScrollBar">
+                        <div class="all_alerts">
+                            <aura:iteration items="{!v.alertsHistoryList}" var="allAlerts">
+                                <aura:if isTrue="{!not(empty(allAlerts.Title__c))}">
+                                <div class="url_alert">
+                                    <a target="_blank" href ="{!allAlerts.URL__c}">{!allAlerts.Title__c}</a>
+                                    <p class="values ">{!allAlerts.Message__c} </p>
+                                </div> 
+                                    <aura:set attribute="else">
+                                        <div class="url_alert">
+                                         <p class="values ">{!allAlerts.Message__c} </p>
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                            </aura:iteration>
+                        </div>
+                    </div>
+                </div> 
+                
+            </aura:set>
+        </aura:if>
+    </div>
+    </aura:if> -->
+
+
+<!-- <template>
+        <div class="divWidth"> -->
+<!--  <div if:false={isLoaded} class="slds-is-relative">
+                        <lightning-spinner alternative-text="" size="small"></lightning-spinner>
+                    </div> -->
+
+<!--  <div class="cafeAlters">
+                    <div class="title">
+                        <h1 class="setAlerts">
+                            <b>CTC Café Alerts</b>
+                        </h1>
+                    </div>
+                    <div class="customScrollBar">
+                        <div class="all_alerts">
+                            <template for:each={allAlerts} for:item="all">
+                                <div key={allAlerts.id}>
+                                    <div class="url_alert">
+                                        <a target="_blank" href={all.URL__c}>{all.Title__c}</a>
+                                        <p class="values">{all.Message__c} </p>
+                                    </div>
+                                    <div class="url_alert">
+                                        <p class="values ">{all.Message__c} </p>
+                                    </div>                      
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </template> -->

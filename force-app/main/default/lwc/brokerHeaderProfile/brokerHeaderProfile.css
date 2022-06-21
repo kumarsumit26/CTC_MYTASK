@@ -1,0 +1,138 @@
+/*div:focus{
+outline: 0 none !important;
+outline-offset: 0 !important;
+box-shadow: none !important;
+background:none !important;
+}
+a:focus{
+outline: 0 none !important;
+outline-offset: 0 !important;
+box-shadow: none !important;
+background:none !important;
+}
+li:focus {
+outline: 0 none !important;
+outline-offset: 0 !important;
+box-shadow: none !important;
+background:none !important;
+}
+a:hover{
+color: gray !important;
+}*/
+/* @font-face {
+    font-family: 'Calibri';
+    src: url('/BrokersPortal/resource/fonts/calibri/Calibri.svg#Calibri') format('svg'),
+         url('/BrokersPortal/resource/fonts/calibri/Calibri.ttf') format('truetype'),
+         url('/BrokersPortal/resource/fonts/calibri/Calibri.woff') format('woff');
+    src: url('/BrokersPortal/resource/fonts/calibri/calibri.eot');
+    src: url('/BrokersPortal/resource/fonts/calibri/calibri.eot?#iefix') format('embedded-opentype'),
+         url('/BrokersPortal/resource/fonts/calibri/calibri.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  } */
+  
+  
+  .styleName
+  {
+      font-size: 14px; 
+      font-family: 'Calibri'; 
+      color: #000000;
+  }
+  .showMobile
+  {
+      display:none;
+  }
+  
+  .ProfileContainer {
+      text-align:left;
+      
+  }
+  .icn {
+      height: 16px;
+      width: 16px;
+      margin-left: 8px;
+      margin-bottom: 4px;
+      fill: #dc0000;
+  }
+  .visible {
+      min-width:100px;
+  }
+  .feedbackopt > a{
+     display: block;
+      /*align-items:start;*/
+     color: rgb(51, 51, 51);
+      padding: 5px 10px;
+      line-height: 24px;
+      font-size: .75rem;
+  }
+  .feedbackopt > a:hover, .feedbackopt > a:focus, .feedbackopt > a:active{
+      text-decoration: unset;
+  }
+  .uiMenuList {
+      right:0px;
+  }
+  .ProfileName
+  {
+      top: 46px;
+      left: 1606px;
+      width: 28px;
+      height: 17px;
+      font: Regular var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-calibri);
+                      letter-spacing: var(--unnamed-character-spacing-0);
+                          color: var(--unnamed-color-000000);
+                              text-align: left;
+                              font: Regular 14px/20px Calibri;
+                              letter-spacing: 0px;
+                              color: #000000;
+                              opacity: 1;
+                          }
+                          .visible{
+                              text-decoration:none;
+                              
+                          }
+                          
+                          
+                          .uiMenuItem > a, .uiMenuItem > span {
+                              display: block;
+                              color: rgb(51, 51, 51);
+                              position: relative;
+                              white-space: nowrap;
+                              font-size: 0.75rem;
+                              overflow-x: hidden;
+                              text-overflow: ellipsis;
+                              padding: 0.5rem 0.75rem;
+                          }  
+                          
+                          
+                          /* @media only screen and (min-width : 320px) and (max-width : 768px) {
+                              .uiMenuItem > a, .uiMenuItem > span {
+                                  display: block;
+                                  color: rgb(51, 51, 51);
+                                  position: relative;
+                                  white-space: nowrap;
+                                  font-size: 0.75rem;
+                                  overflow-x: hidden;
+                                  text-overflow: ellipsis;
+                                  padding:5px;
+                              }    
+                              
+                              .showUserName
+                              {
+                                  display:none; 
+                              }
+                              .showMobile
+                              {
+                                  display:block;
+                              }
+                          }
+                           @media only screen and (min-width : 769px) and (max-width : 1024px)
+                              {
+                              .showUserName
+                              {
+                                  display:none; 
+                              }
+                              .showMobile
+                              {
+                                  display:block;
+                              }
+                          } */

@@ -1,0 +1,375 @@
+/***********All Sandboxes Fonts Start Here************/
+@font-face {
+    font-family: 'FranklinGothicHeavyRegular';
+    src: url('/BrokersPortal/resource/fonts/franklin/FranklinGothicHeavyRegular.eot');
+    src: url('/BrokersPortal/resource/fonts/franklin/FranklinGothicHeavyRegular.eot?#iefix') format('embedded-opentype'),
+        url('/BrokersPortal/resource/fonts/franklin/FranklinGothicHeavyRegular.woff2') format('woff2');
+    src: url('/BrokersPortal/resource/fonts/franklin/FranklinGothic-Heavy.svg#FranklinGothic-Heavy') format('svg'),
+        url('/BrokersPortal/resource/fonts/franklin/FranklinGothic-Heavy.ttf') format('truetype'),
+        url('/BrokersPortal/resource/fonts/franklin/FranklinGothic-Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calibri';
+    src: url('/BrokersPortal/resource/fonts/calibri/Calibri.svg#Calibri') format('svg'),
+        url('/BrokersPortal/resource/fonts/calibri/Calibri.ttf') format('truetype'),
+        url('/BrokersPortal/resource/fonts/calibri/Calibri.woff') format('woff');
+    src: url('/BrokersPortal/resource/fonts/calibri/calibri.eot');
+    src: url('/BrokersPortal/resource/fonts/calibri/calibri.eot?#iefix') format('embedded-opentype'),
+        url('/BrokersPortal/resource/fonts/calibri/calibri.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/***********All Sandboxes Fonts End Here************/
+
+/***********For Production Fonts Start Here************/
+@font-face {
+    font-family: 'FranklinGothicHeavyRegular';
+    src: url('/resource/fonts/franklin/FranklinGothicHeavyRegular.eot');
+    src: url('/resource/fonts/franklin/FranklinGothicHeavyRegular.eot?#iefix') format('embedded-opentype'),
+        url('/resource/fonts/franklin/FranklinGothicHeavyRegular.woff2') format('woff2');
+    src: url('/resource/fonts/franklin/FranklinGothic-Heavy.svg#FranklinGothic-Heavy') format('svg'),
+        url('/resource/fonts/franklin/FranklinGothic-Heavy.ttf') format('truetype'),
+        url('/resource/fonts/franklin/FranklinGothic-Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calibri';
+    src: url('/resource/fonts/calibri/Calibri.svg#Calibri') format('svg'),
+        url('/resource/fonts/calibri/Calibri.ttf') format('truetype'),
+        url('/resource/fonts/calibri/Calibri.woff') format('woff');
+    src: url('/resource/fonts/calibri/calibri.eot');
+    src: url('/resource/fonts/calibri/calibri.eot?#iefix') format('embedded-opentype'),
+        url('/resource/fonts/calibri/calibri.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/***********For Production Fonts End Here************/
+
+.THIS.mainHeader {
+    background: #fff;
+    padding: 18px 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+.THIS .deskTopIcon,
+.THIS .searchICon,
+.THIS .searchDesktop {
+    display: none;
+}
+
+.THIS .headerPart {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.THIS .mobileLogo {
+    flex: 0 0 23%;
+}
+
+.THIS .showSearch {
+    flex: 0 0 40%;
+}
+
+.THIS .notifications {
+    flex: 0 0 180px;
+    margin-left: auto;
+}
+
+.THIS .notifications>li {
+    float: left;
+    line-height: 30px;
+}
+
+.THIS .notifications>li.setProfile {
+    position: relative;
+}
+
+.THIS .notifications>li svg {
+    width: 20px;
+    height: 20px;
+}
+
+.THIS .notifications>li .showMobile svg {
+    width: 15px;
+    height: 15px;
+}
+
+.THIS .notifications>li:not(:first-child) {
+    margin-left: 20px;
+}
+
+.THIS .actionMenu ul.scrollable li a {
+    padding: 5px 10px;
+    line-height: 24px;
+}
+
+.THIS div:focus {
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.THIS a:focus {
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.THIS li:focus {
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.THIS .navMargin {
+    position: fixed;
+    margin: 24px 0px 0px 0px;
+    width: 23%;
+    float: left;
+    background: #f4f4f5;
+}
+
+.THIS .setNavigationHeader {
+    height: 64px;
+    background-color: #FFFFFF;
+}
+
+.THIS .setSize {
+    position: relative;
+}
+
+.THIS .sub-menu {
+    position: absolute;
+    right: 10px;
+}
+
+.THIS .setSubMenu {
+    background: none !important;
+}
+
+.THIS .slds-modal__container {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.THIS .navContainer {
+    float: left;
+    background: #4E4E4E !important;
+    color: #fff !important;
+    min-height: 960px;
+}
+
+.THIS .showDropDown {
+    background-color: #4e4D4e !important;
+    color: #fff !important;
+    margin-left: 8px;
+}
+
+.THIS .slds-is-active {
+    color: #FFFFFF !important;
+    background: #373737 0% 0% no-repeat padding-box;
+}
+
+.THIS .lds-text-link--reset {
+    background: #373737 !important;
+}
+
+.THIS .navContainer li a {
+    background: none !important;
+}
+
+.THIS a:hover {
+    text-decoration: unset;
+}
+
+.THIS .slds-navigation-list--vertical__action {
+    font-size: 16px;
+    font-family: 'Calibri' !important;
+    color: #E2E2E2 !important;
+}
+
+.THIS .setSizesubItem {
+    font-size: 16px;
+    font-family: 'Calibri' !important;
+    color: #E2E2E2 !important;
+}
+
+.THIS .setSizesubItem a {
+    background: none !important;
+}
+
+.THIS .slds-text-link--reset {
+    border-top: #000000 !important;
+    border-bottom: #000000 !important;
+    border-inline-start: #000000 !important;
+}
+
+.THIS .slds-is-active a {
+    background: none !important;
+}
+
+.THIS .setNavg {
+    text-align: left;
+    font-family: 'Calibri';
+    letter-spacing: 0.7px;
+    color: #E2E2E2;
+}
+
+/*@media only screen and (min-device-width : 320px) and (max-device-width: 320px){
+.THIS .styleNotification
+{
+line-height:45px;
+padding-right:16px;
+padding-left:16px;
+} 
+}
+/*Mobile View*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 580px) {
+
+
+    .THIS .setNavg {
+        text-align: left;
+        font: Bold 11/21px Calibri;
+        font-family: 'Calibri';
+        letter-spacing: 0.7px;
+        color: #E2E2E2;
+    }
+
+    .THIS .slds-navigation-list--vertical__action {
+        font: Bold 16/22px Calibri;
+        font-family: 'Calibri' !important;
+        color: #E2E2E2 !important;
+    }
+
+    .THIS .setSizesubItem {
+        font: Bold 16/22px Calibri;
+        font-family: 'Calibri' !important;
+        color: #E2E2E2 !important;
+    }
+
+    .THIS .slds-text-link--reset {
+        border-top: #000000 !important;
+        border-bottom: #000000 !important;
+        border-inline-start: #000000 !important;
+    }
+
+}
+
+/*@media only screen and (min-device-width : 581px) and (max-device-width : 767px) 
+    {
+    
+    
+}*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+
+    .THIS .actionMenu ul.scrollable li a {
+        padding: 5px 10px;
+        line-height: 24px;
+    }
+
+    .THIS.responsiveHeader {
+        width: 50%;
+    }
+
+}
+
+@media only screen and (max-device-width : 767px) {
+    .THIS .navContainer .setResour>ul.showDropDown {
+        margin-top: 8px;
+    }
+
+    .THIS .deskTopIcon,
+    .THIS .searchICon,
+    .THIS .searchDesktop {
+        display: block;
+    }
+
+    .THIS .hideSerach {
+        display: none;
+    }
+
+    .THIS .notifications {
+        flex: 0 0 130px;
+        margin-left: auto;
+    }
+
+    .THIS .mobileLogo {
+        display: none;
+    }
+
+    .THIS .setSize {
+        position: relative;
+    }
+
+    .THIS .sub-menu {
+        position: absolute;
+        right: 10px;
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+
+    .THIS .deskTopIcon,
+    .THIS .searchICon,
+    .THIS .searchDesktop {
+        display: block;
+    }
+
+    .THIS .navContainer .setResour>ul.showDropDown {
+        margin-top: 8px;
+    }
+
+    .THIS .hideSerach {
+        display: none;
+    }
+
+    .THIS .mobileLogo {
+        flex: 0 0 69%;
+        text-align: center
+    }
+
+    .THIS .notifications>li:not(:first-child) {
+        margin-left: 25px;
+    }
+
+    .THIS .notifications {
+        flex: 0 0 180px;
+        margin-left: auto;
+    }
+}
+
+@media only screen and (min-width : 1024px) and (max-width : 1324px) {
+    .THIS .navContainer .setResour>ul.showDropDown {
+        margin-top: 8px;
+    }
+
+    .THIS .mobileLogo {
+        flex: 0 0 23%;
+        text-align: left;
+    }
+
+    .THIS .notifications {
+        flex: 0 0 180px;
+        margin-left: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .THIS.responsiveHeader,
+    .THIS.custombackDrop {
+        display: none;
+    }
+}

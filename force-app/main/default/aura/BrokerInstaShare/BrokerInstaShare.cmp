@@ -1,0 +1,368 @@
+<aura:component controller="BrokerInstaShareRequestController"
+            implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+            access="global">
+<aura:method name="sampleMethod" action="{!c.doInit}"></aura:method>
+<aura:attribute name="isModalOpen" type="boolean" default="false"/>  
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<!-- <aura:attribute name="pageReference" type="Object" />
+<aura:handler name="change" value="{!v.pageReference}" action="{!c.doInit}" /> -->
+<aura:attribute name="pageSize" type="Integer" default="10" />
+<aura:attribute name="totalPages" type="Integer" default="1" />
+<aura:attribute name="recordsAvailable" type="Boolean" default="true" />
+<aura:attribute name="totalSize" type="Integer" default="0" />
+<aura:attribute name="currentPageNumber" type="Integer" default="1" />
+<aura:attribute name="allData" type="List" />
+<aura:attribute name="allDataInAscOrder" type="List" />
+<aura:attribute name="finalFilteredData" type="List" />
+<aura:attribute name="tableData" type="List" default="" />
+<aura:attribute name="searchPhrase" type="String" default="" />
+<aura:attribute name="lastUpdated" type="String" />
+<aura:attribute name="noRecordText" type="String" />
+<aura:attribute name="showSpinner" type="Boolean" default="true" />
+<aura:attribute name="showLastUpdated" type="Boolean" default="true" />
+<aura:attribute name="selectedValue" type="String" default="All InstaShare Requests" />
+<aura:attribute name="showListItems" type="Boolean" default="false" />
+<aura:attribute name="fieldsString" type="String" default="Broker__c,Email__c,Name,Status__c, LastModifiedDate" />
+<aura:attribute name="documentSize" type="Integer" default="0" />
+<aura:attribute name="documentIds" type="List" />
+<aura:attribute name="toggleSort" type="Boolean" default="false" />
+<aura:attribute name="dataInAscOrder" type="Boolean" default="false" />
+<aura:attribute name="downloadURL" type="String" />
+<aura:attribute name="displayItemsText" type="Boolean" default="true" />
+<aura:attribute name="totalRecords" type="Boolean" default="true" />
+<aura:attribute name="mapOfIdToContDocId" type="map"/>
+<aura:attribute name="options" type="List" default="[]"/>
+<aura:attribute name="value" type="String" default=""/>
+<aura:attribute name="label" type="String" default=""/>
+<aura:attribute name="selected" type="String" default=""/>
+<aura:attribute name="showModal" type="Boolean" default="false"/>
+<aura:attribute name="totalRecord" type="Integer"/>
+<aura:attribute name="contentsIds" type="String" default=""/>
+<aura:attribute name="desktopBannerId" type="List[]"/>
+<aura:attribute name="dektopBannerList" type="List[]"/>
+<aura:attribute name="tabletBannerList" type="List[]"/>
+<aura:attribute name="startPage" type="Integer" />
+<aura:attribute name="endPage" type="Integer"/>
+<aura:attribute name="truthy" type="Boolean" default="True"/>
+<aura:attribute name="lstOfContDocIds" type="List[]" default=""/>
+<aura:attribute name="currentFileSelect" type="List[]" />
+<aura:attribute name="mapOfRecordIdToDocIdsssssss" type="Integer"/>
+<aura:attribute name="TotalnoofDocuments" type="List[]"/>
+<aura:attribute name="InstaTotalDoc" type="String" default=""/>
+
+
+
+<aura:if isTrue="{!v.showSpinner}">
+    
+    <div>
+        <lightning:spinner alternativeText="Loading" size="small" />
+    </div>
+    
+    <aura:set attribute="else">
+        <div class="instaShare">
+            <div class="slds-grid listItemSection">
+                <div class="slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12 styleParagraph">
+                    <div class="selectionItem">
+                        <a onclick="{!c.toggleListItems}" onblur="{!c.closeListItemsSection}" class="active">
+                            {!v.selectedValue}  
+                            <lightning:icon class="icn" iconName="utility:down" size="x-small" />
+                        </a>
+                        <aura:if isTrue="{!v.showListItems}">
+                            <ul class="listItem">
+                                <li><a data-value="All InstaShare Requests" onclick="{!c.handleListItem}">All
+                                    InstaShare Requests</a></li>
+                                <li><a data-value="All Sent Requests" onclick="{!c.handleListItem}">All Sent
+                                    Requests</a></li>
+                                <li><a data-value="All Completed Requests" onclick="{!c.handleListItem}">All
+                                    Completed Requests</a></li>
+                                <li><a data-value="All Archived Requests" onclick="{!c.handleListItem}">All Archived
+                                    Requests</a></li>
+                            </ul>
+                        </aura:if>
+                        
+                        
+                        
+                    </div>
+                    <p class="setpad">
+                        <span>{!v.totalSize}</span> 
+                        <aura:if isTrue="{!v.displayItemsText}">
+                            items
+                            <aura:set attribute="else">
+                                item
+                            </aura:set>
+                        </aura:if>
+                        <aura:if isTrue="{!v.showLastUpdated}">• Last updated
+                            <span>{!v.lastUpdated}</span>
+                        </aura:if>
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="slds-grid customSearchBar">
+                <div class="slds-size_10-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                    
+                    
+                    <lightning:input aura:id="searchKey" name="enter-search" type="search"
+                                        placeholder="Search all requests..." value="{!v.searchPhrase}"
+                                        onchange="{!c.handleChange}" />
+                </div>
+                <div class="slds-size_2-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12 mainSort">
+                    <a href="" class="sortIcon" onclick="{!c.handleMobileSort}">
+                        <lightning:icon class="icn" iconName="action:sort" size="x-small" />
+                    </a>
+                </div>
+            </div>
+            <aura:if isTrue="{!v.recordsAvailable}">
+                <div class="tableWidth desktopTable">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-line-height_reset thBorder">
+                                <th class="userName" scope="col">
+                                    <div class="slds-truncates setHeader" title="Name">Name</div>
+                                </th>
+                                <th class="userEmail" scope="col">
+                                    <div class="slds-truncates setHeader" title="Email">Email</div>
+                                </th>
+                                <th class="userStatus" scope="col">
+                                    <div class="slds-truncates setHeader" title="Status">Status</div>
+                                </th>
+                                
+                                <!--  <th class="userDeal" scope="col">
+                                    <div class="slds-truncates setHeader" title="Deal #">Deal #</div>
+                                </th>
+                                
+                                <th class="userDocs" scope="col">
+                                    <div class="slds-truncates setHeader" style="text-align: center"
+                                        title="Description">Uploaded</div>
+                                </th> -->
+                                <th class="userDownload" scope="col">
+                                    <div class="slds-truncates setHeader"
+                                            title="Documents">Documents</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <aura:iteration var="data" items="{!v.tableData}" indexVar="index">
+                                <tr class="slds-hint-parent">
+                                    <td scope="row" class="userName"><div class="slds-truncate">{!data.recordFieldValues.Name}</div></td>
+                                    <td class="userEmail">
+                                        <div class="slds-truncate"><a
+                                                                        href="{!'mailto:'+data.recordFieldValues.Email__c}"
+                                                                        title="{!data.recordFieldValues.Email__c}">{!data.recordFieldValues.Email__c}</a>
+                                        </div>
+                                    </td>
+                                    <td class="userStatus">
+                                        {!data.totalRecord}
+                                        <aura:if isTrue="{!data.recordFieldValues.Status__c=='Email sent'}">
+                                            <span class="sentEmail">{!data.recordFieldValues.Status__c}</span>
+                                        </aura:if>
+                                        <aura:if isTrue="{!data.recordFieldValues.Status__c=='Completed'}">
+                                            <span class="completed">{!data.recordFieldValues.Status__c}</span>
+                                        </aura:if>
+                                        <aura:if isTrue="{!data.recordFieldValues.Status__c=='Archived'}">
+                                            <span class="archived">{!data.recordFieldValues.Status__c}</span>
+                                        </aura:if>
+                                    </td>
+                                    <!--
+                                    <td class="userDocs">
+                                        <div class="dealno" style="text-align: left"> 
+                                            <c:BrokerInstaShareDealDropdown selectedInstaId="{!data.recordFieldValues.Id}"   selectedInstaName="{!data.recordFieldValues.CTC_Deal_With_Borrower__c}"></c:BrokerInstaShareDealDropdown>
+                                        </div>
+                                    </td> 
+        -->
+                                    <!-- <td class="userDocs">
+                                        <div class="slds-truncate" style="text-align: center">
+
+                                                {!data.noOfDocuments} Documents
+                                            </span>
+                                        </div>
+                                    </td> -->
+                                    <td class="userDownload">
+                                        <aura:if isTrue="{!data.displayDownload}">
+                                            <!-- <aura:iteration items="{!data.lstOfContDocIds}" var="desktopId"  indexVar="indx">
+                                                <lightning:fileCard fileId="{!data.lstOfContDocIds}" />  
+                                            </aura:iteration> -->
+                                            <div class="" style="text-align:Left">
+                                                <a id="{!data.lstOfContDocIds}" title="{!data.displayText}"
+                                                    onclick="{!c.downloadfile}">
+                                                    {!data.displayText} 
+                                                    
+                                                </a>
+
+                                                <a id="{!data.lstOfContDocIds}" title="{preview}"
+                                                onclick="{!c.previewFiles}">
+                                                    preview
+                                                    
+                                                </a>
+                                            </div>
+
+<div class ="">
+                                        <aura:if isTrue="{!v.isModalOpen}">
+                                                    
+                                            <!-- Modal/Popup Box starts here-->
+                                            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                                    <div class="slds-modal__container">
+                                                        <!-- Modal/Popup Box Header Starts here-->
+                                                        <header class="slds-modal__close">
+                                                            <lightning:buttonIcon iconName="utility:close"
+                                                                                    onclick="{! c.closeModel }"
+                                                                                    alternativeText="close"
+                                                                                    variant="bare-inverse"
+                                                                                    class="slds-modal__close"/>
+                                                            <!--    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.contentsIds} {!data.lstOfContDocIds} Preview Documents</h2>  -->
+                                                        </header>
+                                                        <!--Modal/Popup Box Body Starts here-->
+                                                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                                
+                                                                
+                                                                <aura:iteration items="{!v.InstaTotalDoc}" var="allPdf"  indexVar="indx">
+                                                                <div class="previewDoc">
+                                                                    <iframe src="{!'/sfc/servlet.shepherd/document/download/'+allPdf+'#toolbox=0'}" type="pdf"  height="300px" width="600px"/>
+                                                                </div>
+                                                                </aura:iteration>
+                                                                
+                                                                
+
+
+                                                
+                                                            
+                                                            <ul class="slds-carousel__indicators" role="tabpanel">
+                                                                <aura:iteration items="{!data.lstOfContDocIds}" var="desktopId"  indexVar="indx">
+                                                                    <li data-target="{!desktopId.currentFileSelect}" data-slide-to="{!indx}" class="slds-carousel__indicator" role="presentation">
+                                                                        <button onclick="{!c.buttonClick}" data-nag-index="{!indx}" disabled="{!indx=='...'}" class="{!if(((v.endPage+0)/v.pageSize)==indx,'slds-button slds-button_brand slds-carousel__indicator-action','slds-button slds-button_neutral slds-carousel__indicator-action')}"  >
+                                                                        </button>
+                                                                    </li>     
+                                                                </aura:iteration>
+                                                            </ul>
+                                                            <div class="slidebtns">
+                                                                <div class="left">  
+                                                                    <lightning:button iconName="utility:chevronleft"  disabled="{!v.startPage == 0}"   onclick="{!c.previousdoc}" />
+                                                                </div>
+                                                                <div class="right">
+                                                                    <lightning:button iconName="utility:chevronright"  disabled="{!v.endPage + 1 >= v.currentFileSelect}"  onclick="{!c.nextdoc}" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </section>
+                                                <div class="slds-backdrop slds-backdrop_open"></div>
+                                            </aura:if>
+                                        </div>
+                                        
+                                            
+                                            <aura:set attribute="else">
+                                                <div style="text-align: Left">
+                                                    {!data.displayText}
+                                                </div>
+                                            </aura:set>
+                                        </aura:if>
+
+                                    </td>
+                                    
+                                    
+                                    
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                
+                <div class="mobileGrid">
+                    <aura:iteration var="data" items="{!v.tableData}" indexVar="index">
+                        <div class="eachCol">
+                            <div class="eachDetails">
+                                <div class="nameEmail">
+                                    <p>{!data.recordFieldValues.Name}</p>
+                                    <a href="{!'mailto:'+data.recordFieldValues.Email__c}">{!data.recordFieldValues.Email__c}</a>
+                                </div>
+                                <div class="requestStatus">
+                                    <aura:if isTrue="{!data.recordFieldValues.Status__c=='Email sent'}">
+                                        <span class="sentEmail">{!data.recordFieldValues.Status__c}</span>
+                                    </aura:if>
+                                    <aura:if isTrue="{!data.recordFieldValues.Status__c=='Completed'}">
+                                        <span class="completed">{!data.recordFieldValues.Status__c}</span>
+                                    </aura:if>
+                                    <aura:if isTrue="{!data.recordFieldValues.Status__c=='Archived'}">
+                                        <span class="archived">{!data.recordFieldValues.Status__c}</span>
+                                    </aura:if>
+                                </div>
+                            </div>
+                            <div class="eachDetails">
+                                <!--  <div class="dealno" style="text-align: left">
+                                            <c:BrokerInstaShareDealDropdown selectedInstaId="{!data.recordFieldValues.Id}"   selectedInstaName="{!data.recordFieldValues.CTC_Deal_With_Borrower__c}"></c:BrokerInstaShareDealDropdown>
+                                    </div> -->
+                                <div class="downloadICon">
+                                    <aura:if isTrue="{!data.displayDownload}">
+                                        <a style="text-align: left" class="downloadValue" id="{!data.lstOfContDocIds}"
+                                            onclick="{!c.downloadfile}" download="InstaShare">
+                                            <img src="{!$Resource.downloadImage}" style="margin-right:6px;"
+                                                    width="24" height="24" />
+                                            <!--Download bank statements-->
+                                        </a>
+                                        
+                                        <aura:set attribute="else">
+                                            <div class="nonetext" >
+                                                {!data.displayText}
+                                            </div>
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                                <!-- <div class="downloadICon resendLink">
+                                        <a href="#">Resend link</a>
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <div class="downloadICon resendLink">
+                                            <a href="#">Resend link</a>
+                                        </div>
+                                    </aura:set> -->
+                                
+                                
+                            </div>
+                            <!--<aura:if isTrue="{!data.displayDownload}">
+                                
+                            </aura:if>-->
+                            
+                        </div>
+                    </aura:iteration>
+                    
+                </div>
+                
+                <aura:set attribute="else">
+                    <div class="noRecords">
+                        <span>
+                            {!v.noRecordText}
+                            
+                        </span>
+                    </div>
+                    
+                </aura:set>
+            </aura:if>
+        </div>
+        <aura:if isTrue="{!v.recordsAvailable}">
+            <div class="slds-clearfix">
+                <div class="slds-float_right">
+                    <div class="slds-grid">
+                        
+                        <p class="setPageNumber">
+                            {! (v.currentPageNumber) } of {! (v.totalPages) }
+                        </p>
+                        
+                        <lightning:button label=" " class="setPageBtn" disabled="{! v.currentPageNumber == 1}"
+                                            onclick="{!c.previous}" iconName='utility:chevronleft' />
+                        
+                        <lightning:button label=" " class="setPageBtn"
+                                            disabled="{!v.currentPageNumber == v.totalPages}" onclick="{!c.next}"
+                                            iconName='utility:chevronright' />
+                    </div>
+                </div>
+            </div>
+            
+        </aura:if>
+        
+    </aura:set>
+</aura:if>
+
+</aura:component>

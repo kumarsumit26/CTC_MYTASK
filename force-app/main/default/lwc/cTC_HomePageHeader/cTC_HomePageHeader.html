@@ -1,0 +1,85 @@
+<template>
+    <header class="mainHeader">
+        <div class="headerPart">
+            <div class="deskTopIcon">
+                <img src={BrokerMenuIcon} onclick= {openModel}>  <!--style="min-width: min-content; padding: 0px 0px 16px 16px;"-->
+            </div>
+
+            <div class="mobileLogo">
+                <c-broker-dashboard-logo></c-broker-dashboard-logo>
+            </div>
+            <div class="searchDesktop">
+                <div>
+                    <div if:true={openSearchBar}>
+                        <section  tabindex="-1" aria-labelledby="modal-heading-01"  aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                            <div class="">
+                                <div class="slds-modal__content slds-p-around_large" id="modal-content-id-1">
+                                    <div class="slds-grid">
+                                        <div class="slds-size_11-of-12">
+                                            <c-broker-search-component></c-broker-search-component>    
+                                        </div>                                  
+                                        <div class="slds-size_1-of-12">
+                                            <lightning-icon class="slds-p-left_medium slds-p-top_x-small" icon-name="utility:close" title="close" size="small" onclick={closeSearchModel}></lightning-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>                    
+                    </div>
+                </div>
+            </div>
+            <div class="showSearch hideSerach">
+                <c-broker-search-component></c-broker-search-component> 
+            </div>
+            <!-- <div>
+                <c-broker-search-component></c-broker-search-component>
+            </div> -->
+                
+           <ul class="notifications">
+                <li class="searchICon">
+                    <lightning-icon icon-name="utility:search" title="search" size="small" onclick={openSearchModel}></lightning-icon>
+                </li>
+                <li class="updates styleNotification">
+                    <c-broker-header-notification></c-broker-header-notification>
+                </li>
+                <li class="updates setProfile">  
+                    <c-broker-header-profile-cntl></c-broker-header-profile-cntl>
+                </li>
+            </ul> 
+        </div>
+    </header>
+    <template if:true= {isOpen}>
+        <section role = "dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="responsiveHeader slds-modal slds-fade-in-open">
+            <div class = "">
+                <div class="slds-modal__content">
+                    <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                        <ul class="navContainer">
+                            <div class="slds-clearfix setNavigationHeader">
+                                <div class="slds-float_left slds-p-around_small">
+                                    <p><img src={CTC_LOGOurl} onclick= {openModel} style="min-width: min-content;"/></p>
+                                </div>
+                                <div class="slds-float_right slds-p-around_small">
+                                    <p><lightning-icon icon-name="utility:close" title="close" onclick= {closeModel}></lightning-icon></p>
+                                </div>
+                            </div>
+                        <div class="slds-p-around_small setNavg">
+                            Navigation
+                        </div>
+                        <template for:each={menuItems} for:item="menuItem">
+                            <div key={menuItem.Id}>
+                
+                                <c-child-navigation item={menuItem} onnavigateto1={handleNavigation} key= {menuItem.Id}>
+                
+                                </c-child-navigation>
+                            </div>
+                
+                        </template>
+                    </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open custombackDrop"></div>
+    </template>
+</template>

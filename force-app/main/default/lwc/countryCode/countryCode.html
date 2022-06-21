@@ -1,0 +1,39 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Name" name="name" 
+        onchange={nameChangedHandler} value={strName}></lightning-input>
+    </div>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Email" name="email" 
+        onchange={emailChangedHandler} value={strEmail}></lightning-input>
+    </div>
+
+
+    <fieldset class="slds-form-element sids-form-element_compound">
+        <div class="slds-form-element_control">
+            <div class="slds-form-element_row">
+                <div class="slds-size 1-of-2">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element_label" for="text-input-id-47">
+                            <abbr class="slds-required" title="required">*</abbr>Phone
+                        </label>
+                        <div class="slds-form-element_control">
+                            <input type="tel" class="slds-input" data-id="country" name="country" onchange={phoneChangedHandler}></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+
+    <!-- <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Phone" name="phone" 
+        onchange={phoneChangedHandler} value={strPhone}></lightning-input>
+    </div> -->
+    
+    <div class="slds-var-m-top_medium">
+        <lightning-button variant="brand" type="submit" label="Save" class="slds-align_absolute-center" onclick={save}>
+        </lightning-button>
+    </div>
+</template>

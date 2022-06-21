@@ -1,0 +1,90 @@
+<template>
+    <!-- <ui:menu >
+        <ui:menuTriggerLink aura:id="trigger"> -->
+    <div class="slds-grid">
+        <div>
+            <lightning-icon aura:id="trigger" icon-name="utility:user" alternative-text="User" title="User"
+                size="small"></lightning-icon>
+        </div>
+        <!-- <aura:if isTrue="{!v.checkDevice}">-->
+        <!-- <div class="showMobile">
+                        <lightning-icon icon-name="utility:chevrondown" title="User" size="x-small"></lightning-icon>
+                    </div> -->
+        <!--  <aura:set attribute="else">-->
+        <div class="showUserName styleName">
+            <p>Sneha B</p>
+            <!-- {!v.userInfo} -->
+        </div>
+        <!-- </aura:set>-->
+        <!-- </aura:if>-->
+    </div>
+
+    <div>
+    <lightning-button variant="brand"
+       label="PopUp"
+       title="PopUp "
+       onclick={openModal}
+       class="slds-m-left_x-small">
+    </lightning-button>
+    <!--Use template if:true to display/hide popup based on isModalOpen value--> 
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal/PopUp Box header LWC</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p><b>Modals/Popup Box are used to display content in a layer above the app.
+                    </b></p>
+                    <p><b>This paradigm is used in cases such as the creation or editing of a record, as well as various types of messaging and wizards.
+                    </b></p>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={submitDetails} title="OK">OK</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</div>
+    
+
+    <!-- </ui:menuTriggerPress> -->
+    <!-- <ui:menuList class="actionMenu" aura:id="actionMenu">
+            <aura:iteration items="{!v.options}" var="itemLabel">
+                <ui:actionMenuItem label="{!itemLabel}" click="{!c.handleClick}"/>
+            </aura:iteration>
+            <li class="feedbackopt">
+            	<a href="{!$Label.c.Broker_Feedback_URL}" target="_blank">
+	                 <span>Feedback</span>
+                    <img class="icn"  src="{!$Resource.Broker_Feedback_Icon}"/>
+                    <img class="icn"  src="{!$Resource.Broker_Feedback_Icon + '/new_window.svg'}"/>
+                </a>
+            </li>
+            <!<a href="https://docs.google.com/spreadsheets/d/119jwa_ArA1nwLALeK3j_ydrEPfx2hvWlSo2gSko7pNY/edit#gid=0" target="_blank">
+                <div class="slds-grid slds-grid_vertical-align-center">
+                    <div class="slds-col slds-size_8-of-12  feedbackopt">
+                        <span>Feedback
+                        </span>
+                        
+                    </div>
+                    <div class="slds-col slds-size_4-of-12 ">
+                        <img class="icn"  src="{!$Resource.mortgageicon}"/>  
+                    </div>
+                </div>
+            </a>
+        </ui:menuList>
+    </ui:menu>  -->
+</template>

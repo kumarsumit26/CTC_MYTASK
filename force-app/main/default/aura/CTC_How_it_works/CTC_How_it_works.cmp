@@ -1,0 +1,189 @@
+<aura:component controller="SendEmailHandler" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+    <aura:attribute name="data" type="list"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="contactobj" 
+                    type="Contact" 
+                    default= "{'sobjectType':'Contact',
+                              'Name':'',
+                              'Email':'',
+                              'ConfirmEmail':''}"/>
+    <aura:attribute name="contactId" type="String"/>
+    <aura:attribute name="name" type="String"/>
+    <aura:attribute name="email" type="String"/>
+    <aura:attribute name="confirmemail" type="String"/>
+    <aura:attribute name="checkbox" type="boolean" default="false"/>
+    <aura:attribute name="isButtonActive" type="boolean" default="true"/>
+    <aura:attribute name="status" type="String" default="Not Sent"/>
+    <aura:handler name="init" value="{!this }" action="{! c.init }"/>
+     
+    
+    <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_8-of-12" >
+            <!--style="Width:680px;
+                height:400px;
+                border:0.5px solid #000;
+                position:absolute; 
+                left:200px; 
+                top:140px">-->
+            <lightning:card >
+                <b><h1 class="TitleRequest" >All InstaShare Request</h1></b>
+                <div
+                     onkeyup="{! c.handleKeyUp }">
+                    <lightning:input
+                                     class="Search"
+                                     aura:id="enter-search"
+                                     name="enter-search"
+                                     placeholder="Search all requests..."
+                                     type="search"
+                                     />
+                </div>
+                <!-- All InstaShare Request Row -->        
+                <div>
+                    <lightning:datatable
+                                         keyField="id"
+                                         data="{!v.data}"
+                                         columns="{!v.columns}"
+                                         hideCheckboxColumn="true"/>
+                    
+                </div>	
+            </lightning:card>
+        </div>
+        
+        <!-- <div class="slds-grid slds-gutters">  -->
+        <div
+             class="slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_4-of-12"> 
+            <!--  style="Width:400px;
+                height:400px;
+                border:0.5px solid #000;
+                position:absolute; 
+                left:900px; 
+                top:140px">-->
+            <lightning:card>
+                <b>
+                    <h1 class="Title">How it works</h1>
+                </b>
+                <p class="paragraph">
+                    InstaShare is our banking verification service that enables instant and secure sharing
+                    of your client's bank statements directly with you and Community Trust.It is easier way
+                    to satisfy application conditions where bank statements are required to support both
+                    down payment and income verification.
+                </p>
+                <br></br>
+                <p  class="paragraph">
+                    Send a request through email with instructions for your client on how to get set up on
+                    InstaShare.
+                </p>
+                <div>
+                    <center>
+                        <button class="button button1" 
+                                variant="neutral" 
+                                onclick="{!c.openModel}">
+                            Send a request
+                        </button>
+                    </center>
+                </div>
+            </lightning:card>
+        </div>
+    </div>
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    
+    <div class="slds-grid slds-gutters"
+         >
+        <aura:if isTrue="{!v.isModalOpen}">
+            
+            <!--Popup Box starts-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <b><h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Send an Instashare request</h2></b><br></br>
+                        <p class="subtitle">Please enter the information of the applicant who requires a banking verification</p><br></br>
+                        <lightning:input class="label" 
+                                         label="Name" 
+                                         aura:id="txtName"
+                                         placeholder="eg.John Smith" 
+                                         pattern="[a-zA-Z]+"  
+                                         messageWhenPatternMismatch="Enter valid name"
+                                         value="{!v.name}" 
+                                         onchange="{!c.activeButton}"/>
+                        <lightning:input class="label" 
+                                         aura:id="txtEmail"
+                                         label="Email" 
+                                         placeholder="eg.jsmith@ctcbrokerage.com" 
+                                         pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"  
+                                         messageWhenBadInput="Enter valid email."
+                                         value="{!v.email}" 
+                                         onchange="{!c.activeButton}"/>
+                        <lightning:input class="label" 
+                                         label="Confirm Email" 
+                                         aura:id="txtCnfmEmail"
+                                         placeholder="eg.jsmith@ctcbrokerage.com" 
+                                         pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+                                         messageWhenBadInput="Not Match"
+                                         value="{!v.confirmemail}" 
+                                         onchange="{!c.activeButton}"/><br></br>
+                        <lightning:input type="checkbox"
+                                         aura:id="checkbox"
+                                         class="checkbox" 
+                                         label="I Consent to community Trust sending an email to my client on my behalf, and that this is their corret email and name."
+                                         value="{!v.checkbox}"
+                                         onchange="{!c.activeButton}"/><br></br>
+                        <!-- <ui:inputCheckbox  aura:id="checkbox" label="I Consent to community Trust sending an email to my client on my behalf, and that this is their corret email and name." value="{!v.checkbox}" change="{!c.activeButton}"/>-->
+                        <lightning:button variant="brand-outline"
+                                          class="SendButton" 
+                                          label="Send email request" 
+                                          onclick="{!c.Send}"
+                                          disabled="{!v.isButtonActive}"/>
+                    </header>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>  
+    
+    <!-- Sent Successfully Second Popup-->
+    
+    <aura:attribute name="isModalOpen1" type="boolean" default="false"/>
+    
+    <div class="slds-grid slds-gutters"
+         >
+        <!--<lightning:button variant="brand"
+                              label="Sent sucessfully"
+                             
+                               onclick="{! c.openModel }" /> -->
+        <!--Use aura:if tag to display/hide popup based on isModalOpen1 value-->  
+        <aura:if isTrue="{!v.isModalOpen1}">																																																																						
+            
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel1 }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <center><b><h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Sent Successfully</h2></b><br></br>
+                            
+                            <p>The InstaShare link has been sent by email to<b> Head Internal Audit</b> (jfarias@123.com)</p></center><br></br>
+                        <lightning:icon size="fa-2xl" 
+                                        iconName="action:approval" 
+                                        alternativeText="Approved" 
+                                        title="Approved" /><br></br><br></br>
+                        <p>Follow up with your client to have them log go through our InstaShare experience.</p>
+                    </header>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    
+</aura:component>

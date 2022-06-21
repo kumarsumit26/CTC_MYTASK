@@ -1,0 +1,75 @@
+.THIS .button{
+    background-color: #F4511E;
+    background-clip: padding-box;
+    border: none;
+    color: white;
+    padding:10px;
+    text-align: center;
+    text-decoration: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 25px 4px;
+    width:100%;
+    font-weight : bold ;  
+}
+
+.THIS .button1{
+    border-radius: 15px;	 
+}
+
+.THIS .paragraph{
+    margin: 5px 10px;
+}
+
+.THIS .Title{
+    margin: 50px 10px;
+}
+
+.THIS .slds-text-heading_medium{
+    margin: 0px 5px;  
+}
+
+.THIS .slds-text-heading_medium{
+    text-align: left;
+    font-weight: bold;  
+}
+
+.THIS .subtitle{
+    text-align: left; 
+}
+
+.THIS .label{
+    text-align: left;   
+}
+
+.THIS .checkboxLavel{
+    text-align: left;
+    
+}
+
+.THIS .checkbox{
+    text-align: left;  
+}
+
+.THIS .SendButton{
+    position: right;
+    left:210px;
+    border: none;
+    background-color: #F4511E;
+    background-clip: padding-box;
+    color: white;
+    font-size: 16px;
+    font-weight : bold ;  
+    display: inline-block;  
+}
+
+.THIS .Search{
+    position: left;
+    width:350px;
+    margin: 35px 5px;   
+}
+
+.THIS .TitleRequest{
+    font-size: 20px;
+    margin: 5px 25px;  
+}

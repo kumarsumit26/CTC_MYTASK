@@ -1,0 +1,469 @@
+.THIS .slds-select_container::before { 
+    border-bottom: none;
+
+}
+
+.THIS .slds-select_container:after {
+    border-top: 8px solid rgb(112, 110, 107);
+    	border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+   
+    bottom: calc((1.75rem / 2) - 2px);
+}
+
+.THIS .backgroundInverse {
+    position: relative;
+     display: inline-block;
+     width:100%;
+     height: 80px;
+}
+.THIS .heading {
+    font-family: 'FranklinGothicHeavyRegular';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    color: #4e4e4e;
+    opacity: 1;
+    letter-spacing: 0;
+    text-decoration: none solid rgb(0, 0, 0);
+}
+
+.THIS .setPageNumber {
+    padding: 4px 16px 0 0;
+    font-family: 'Calibri';
+    font-size: 14px;
+    color: #000000;
+}
+.THIS .slds-button {
+    color: black;
+}
+.THIS table .slds-truncate {
+    text-align: left;
+    font-size: 14px;
+    font-family: Calibri;
+    letter-spacing: 0;
+    color: #4e4e4e;
+    opacity: 1;
+    word-break: break-word;
+    max-width: 130px;
+    /*max-width:130px;*/
+    white-space: break-spaces;
+    overflow: unset;
+    text-overflow: unset;
+}
+
+.THIS .slds-table thead th {
+    font-weight:bold !important;
+    font-size: 14px;
+    font-family: Calibri;
+}
+.THIS .instaShare {
+    background-color:#fff;
+    padding:40px 24px;
+    border-radius:8px;
+    margin-bottom:24px;
+}
+.THIS .sentEmail{
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 25px;
+    border-radius:4px;
+    font-family: Calibri,sans-serif;
+    text-align: center;
+    min-width: 74px;
+    max-width: 74px;
+}
+/*{
+    background: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    font-family: Calibri,sans-serif;
+    text-align: left !important;
+    min-width: 74px;
+    max-width: 74px;
+}*/
+.THIS .completed{
+  background: #EBFBEB;
+    color:#3DA542;
+    border: 1px solid #E2E2E2;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 25px;
+    border-radius:4px;
+    font-family: Calibri,sans-serif;
+    text-align: center;
+    min-width: 74px;
+    max-width: 74px;  
+}
+.THIS .archived{
+     background:#FBEBED;
+    color:#D82F47;
+    border: 1px solid #E2E2E2;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 25px;
+    border-radius:4px;
+    font-family: Calibri,sans-serif;
+    text-align: center;
+    min-width: 74px;
+    max-width: 74px;
+}
+.THIS .setpad{
+    font-size: 14px;
+    font-family: 'Calibri';
+    display: inline;
+    color: #4e4e4e;
+    opacity: 1;
+    font-style: normal;
+font-weight: normal;
+}
+.THIS .noRecords{
+    text-align: center;
+    margin-top: 24px;
+    font-family: Calibri;
+    font-size: 14px;
+    color: #4e4e4e;
+}
+.THIS .slds-table_bordered{
+    border-top:0px;
+    border-bottom:0px;
+}
+.THIS .sortIcon .slds-icon-action-sort{
+    background-color:#454545;
+}
+.THIS .mainSort {
+    display:none;
+}
+.THIS .setPageBtn{
+    border: none;
+    background: transparent;
+    
+}
+.THIS .slds-button:disabled {
+    color: rgb(217, 219, 221);
+}
+/*.THIS .slds-truncate {
+        text-align: left;
+        font-size: 14px;
+        font-family: Calibri;
+        letter-spacing: 0;
+        color: #4e4e4e;
+        opacity: 1;
+    }*/
+    .THIS .slds-input {
+        /* border-radius: 4px; */
+        border-color: #e8eef2;
+        stroke-width: 1;
+        padding: 0 30px 0 16px;
+        border-radius: 16px;
+        box-shadow: unset;
+    }
+    .THIS .slds-form-element__control {
+        font-family: 'Calibri';
+        font-size: 12px;
+       /* width: 60%;*/
+        color: #93a0b3;
+        -webkit-text-fill-color: #93a0b3;
+        text-decoration: none solid rgb(147, 160, 179);
+        height: 33px;
+        /*float: left;*/
+    }
+.THIS .slds-form-element__control .instaStyle {
+        font-family: 'FranklinGothicHeavyRegular';
+        font-size: 20px;
+        color: #93a0b3;
+        -webkit-text-fill-color: #93a0b3;
+        text-decoration: none solid rgb(147, 160, 179);
+        height: 33px;
+    /*width: 60%;
+    margin-top: 2%;    
+    float: left;*/
+    }
+    .THIS .tableWidth{
+        padding-top:29.5px;
+    }
+/************Custom Table************/
+/* .THIS.instaShare table tbody tr td.userName {
+    color:#B15E20;
+} */
+.THIS table th, .THIS table td {
+    font-family: 'Calibri';
+    font-size:14px;
+}
+.THIS.instaShare table thead tr th.userName, .THIS.instaShare table thead tr th.userDownload,
+.THIS.instaShare table tbody tr td.userName, .THIS.instaShare table tbody tr td.userDownload {
+    width:17.5%;
+}
+.THIS.instaShare table thead tr th.userEmail, .THIS.instaShare table tbody tr td.userEmail {
+    width:25%;
+}
+.THIS.instaShare table thead tr th.userStatus, .THIS.instaShare table body tr td.userStatus {
+    width:15%;
+}
+.THIS.instaShare table thead tr th.userDocs, .THIS.instaShare table tbody tr td.userDocs {
+    width:25%;
+}
+.THIS.instaShare table tbody tr td.userDownload a {
+    color:#B15E20;
+}
+.THIS.instaShare table td, .THIS.instaShare table th {
+    padding:5px 5px;
+}
+.THIS.instaShare table tbody tr > td a{
+    color:#4E4E4E;
+}
+.THIS.instaShare table tbody tr:hover td, .THIS.instaShare table tbody tr:hover th {
+    background-color:#fff;
+    box-shadow:unset !important;
+}
+/************Custom Table************/
+.THIS .selectionItem select:focus, .THIS .selectionItem select:active {
+    box-shadow: unset;
+    outline: unset;
+}
+.THIS .selectionItem label {
+    display:none;
+}
+.THIS .selectionItem .slds-select_container {
+    max-width:250px;
+}
+.THIS .selectionItem select{
+    border:none;
+    font-size:18px;
+    padding-left:0px;
+}
+.THIS .selectionItem select li{
+    font-size:18px;
+    padding:5px;
+}
+.THIS .customSearchBar svg {
+    left:unset;
+    right:10px;
+}
+.THIS .customSearchBar {
+    margin-top:17px;
+    max-width:340px;
+}
+.THIS .customSearchBar label {
+    display:none;
+}
+.THIS .mobileGrid {
+    display:none;
+}
+.THIS .desktopTable {
+	display:block;
+   
+}
+/**************************************/
+.THIS .selectionItem {
+    position:relative;
+}
+.THIS .selectionItem > a.active {
+    font-family: 'FranklinGothicHeavyRegular';
+    font-size:20px;
+    line-height:20px;
+    position:relative;
+    color:#4e4e4e;
+}
+.THIS .selectionItem > a.active > .slds-icon_container {
+    position:absolute;
+    top: 0px;
+    right: -20px;
+}
+.THIS .selectionItem > .listItem {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background: #fff;
+    z-index: 9;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    min-width: 250px;
+    overflow:hidden;
+}
+.THIS .selectionItem > .listItem > li > a {
+    padding:6px 10px;
+    color:#4e4e4e;
+    display: block;
+    font-size:14px
+}
+.THIS .selectionItem > .listItem > li > a:hover {
+    background-color:rgba(37, 116, 169, 0.05);
+}
+/********************************/
+.THIS .dealno .slds-input{
+    border-radius: 4px;
+    min-height: 27px;
+    max-height: 27px;
+    padding: 0px 16px 0px 8px;
+    /*width:130px;*/
+}
+.THIS .dealno lightning-input{
+    position: relative;
+}
+.THIS .dealno lightning-icon {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    left: unset;
+}
+.THIS .dealno svg {
+    width: 18px;
+    height: 18px;
+}
+.THIS .dealno .slds-pill.pillSize {
+    width: 130px;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    padding: 0px 4px 0px 8px;
+    font-size:13px;
+}
+.THIS .dealno .slds-dropdown ul >li {
+    font-size:13px;
+}
+.THIS #toolbar{
+    display:none;
+}
+.THIS .slds-carousel__indicators {
+    text-align:center;
+}
+.THIS .slidebtns {
+    position:relative;
+}
+.THIS .slidebtns .left, .THIS .slidebtns .right {
+    position:absolute;
+    top:-35px;
+}
+.THIS .slidebtns .left {
+    left:5px;
+}
+.THIS .slidebtns .right {
+    right:5px;
+}
+@media (max-width: 767.98px) {
+    .THIS .selectionItem > a.active {
+        font-size:18px;
+    }
+    .THIS .dealno .slds-pill.pillSize {
+        width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0px 4px 0px 8px;
+        font-size:13px;
+    }
+  	.THIS .mobileGrid {
+        display:block;
+        margin-top:17px;
+    }
+    .THIS .mainSort {
+        display:block;
+        text-align:center;
+    }
+    .THIS .desktopTable {
+        display:none;
+    }
+    .THIS .mobileGrid .eachCol {
+        padding:16px 20px 16px;
+        border-top:1px solid #E2E2E2;
+        
+    }
+    .THIS .mobileGrid .eachCol .eachDetails{
+        display: flex;
+        align-items: center;
+    }
+    .THIS .mobileGrid .eachCol .nameEmail {
+        display: inline-block;
+        width: 70.5%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right:10px
+    }
+    .THIS .mobileGrid .eachCol .nameEmail a{
+        color:#707070;
+    }
+    .THIS .mobileGrid .eachCol .requestStatus {
+        display: inline-block;
+        max-width: 74px;
+        margin-left: auto;
+    }
+    .THIS .mobileGrid .eachCol p {
+        font-size:16px;
+        font-weight:700;
+        font-family:'Calibri';
+        line-height:20px;
+    }
+    .THIS .eachCol .eachDetails:not(:first-child) {
+        margin-top:16px;
+    }
+    .THIS .eachCol .eachDetails .downloadICon, .THIS .dealno {
+        display: inline-block;
+        width: 100%;
+    }
+    .THIS .eachCol .eachDetails .downloadICon {
+        text-align:right;
+        
+    }
+/*     
+    .THIS .eachCol .eachDetails .downloadICon.resendLink a {
+        color:#B15E20;
+        font-family: Calibri;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-decoration-line: underline;
+    } */
+    .THIS .customSearchBar {
+        padding: 0px 16px 0px 16px;
+    }
+    .THIS .listItemSection {
+        padding: 24px 16px 0px 16px;
+    }
+    .THIS .eachCol .eachDetails .downloadICon a{
+        font-family: 'Calibri';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+		color:#B15E20;
+    }
+    /*.THIS .sentEmail, .THIS .completed, .THIS .archived {
+        margin-left:auto;
+    }*/
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    .THIS .slds-truncate {
+        text-align: left;
+        font-size: 14px;
+        font-family: Calibri;
+        letter-spacing: 0;
+        color: #4e4e4e;
+        opacity: 1;
+        /*max-width:unset;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;*/
+    }
+}
+
+.THIS ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-weight: normal;
+}
+.THIS ::-moz-placeholder { /* Firefox 19+ */
+    font-weight: normal;
+}
+.THIS :-ms-input-placeholder { /* IE 10+ */
+    font-weight: normal;
+}
+.THIS :-moz-placeholder { /* Firefox 18- */
+    font-weight: normal;
+}

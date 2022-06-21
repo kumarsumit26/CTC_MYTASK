@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+    <div class="slds-grid ">
+        <div class="slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+            
+            <b>
+                <center><h1><span class="Welcome">Welcome to InstaShare</span></h1></center>
+            </b>
+            
+        </div>
+    </div>
+    
+</aura:component>

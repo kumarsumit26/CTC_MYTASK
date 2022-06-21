@@ -1,0 +1,81 @@
+<template>
+    <div class="promoBanners displayForDesktop">
+        <div class="slds-carousel">
+            <div class="slds-carousel__stage">
+                <div class="slds-carousel__panels" style="transform:translateX(-0%)">
+                        <template for:each={dektopBannerList} for:item="banner">
+                            <div key={banner.recordId}>
+                                 <img src={banner.url} style="width:100%;"/>
+                            </div>
+                        </template>
+                </div>
+                <template if:true={desktopBannerLength}>
+                    <ul class="slds-carousel__indicators" role="tabpanel">
+                        <template for:each={banners.desktopBannerId} for:item="banner" for:index="indx">
+                            <li key={banner.recordId} data-slide-to={indx} class="slds-carousel__indicator" role="presentation">
+                                <button onclick={buttonClick} type="Number" data-index={indx} class="'bullet',' slds-button slds-button_neutral slds-carousel__indicator-action'"></button>                  
+                            </li>
+                        </template>        
+                    </ul>   
+                    <div class="slidebtns">
+                        <div class="left">
+                            <lightning-button-icon icon-name="utility:chevronleft"  alternative-text="chevronleft" title="chevronleft" disabled={stopPrevious} onclick={previous} ></lightning-button-icon>
+                        </div>
+                        <div class="right">
+                            <lightning-button-icon icon-name="utility:chevronright"  alternative-text="chevronleft" title="chevronleft" disabled={stopNext} onclick={next}></lightning-button-icon>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+    <div class="promoBanners displayForTab">
+        <div class="slds-carousel">
+            <div class="slds-carousel__stage">
+                <div class="slds-carousel__panels" style="transform:translateX(-0%)">
+                    <div>
+                        <template if:true={banners}>
+                            <template for:each={banners.tabletBannerId} for:item="banner">
+                                <div key={banner.recordId}>
+                                     <img src={banner.url} style="width:100%;"/>
+                               </div>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+                <div class="left">
+                    <lightning-button-icon icon-name="utility:chevronleft"  alternative-text="chevronleft" title="chevronleft"></lightning-button-icon>
+                </div>
+                <div class="right">
+                    <lightning-button-icon icon-name="utility:chevronright"  alternative-text="chevronleft" title="chevronleft"></lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="promoBanners displayForMob">
+        <div class="slds-carousel">
+            <div class="slds-carousel__stage">
+                <div class="slds-carousel__panels" style="transform:translateX(-0%)">
+                    <div>
+                        <template if:true={banners}>
+                            <template for:each={banners.mobileBannerId} for:item="banner">
+                                <div key={banner.recordId}>
+                                     <img src={banner.url} style="width:100%;"/>
+                               </div>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+                <div class="left">
+                    <lightning-button-icon icon-name="utility:chevronleft"  alternative-text="chevronleft" title="chevronleft"></lightning-button-icon>
+                </div>
+                <div class="right">
+                    <lightning-button-icon icon-name="utility:chevronright"  alternative-text="chevronleft" title="chevronleft"></lightning-button-icon>
+                </div>
+                <!-- <div slot="footer" class="slds-var-m-vertical_medium">
+                    <c-Ctc-Pagination-Component records={banners} record-size="1" onupdate={updateBannerHandler}></c-Ctc-Pagination-Component>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</template>

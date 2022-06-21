@@ -1,0 +1,24 @@
+<template>
+    <div class="slds-card" style="height: 400px; width:600px;">
+        <lightning-card title="Most Recent Deals"><br>
+                <!-- <table>
+                    <tr>
+                        <th>Deal #</th>
+                        <th>Status</th>
+                        <th>Borrower Name</th>
+                        <th>Property Address</th>
+                        <th>Anticip. Fund Date</th>
+                    </tr>
+                    
+                </table> -->
+
+                
+                <template if:true={dealList}>
+                <lightning-datatable data={dealList} columns={columns} key-field="Id"></lightning-datatable>
+            </template>
+            <template if:true={error}>
+                {error}
+            </template>
+        </lightning-card>
+    </div>
+</template>

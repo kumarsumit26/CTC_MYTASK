@@ -1,0 +1,33 @@
+.container {
+    width: 700px;
+    margin: auto;
+}
+.prev , .next {
+    position: absolute;
+    top: 50%;
+    width:auto;
+    padding: 16px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+}
+.next{
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background: rgba(0,0,0,0.8);
+}
+.dot{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #bbb;
+    margin: 0 2px;
+    display: inline-block;
+}
+.active, .dot:hover{
+    background-color: #B45004;
+}

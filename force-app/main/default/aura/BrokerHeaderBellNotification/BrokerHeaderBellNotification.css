@@ -1,0 +1,17 @@
+.THIS .headerNotification {
+    text-align: center;
+}
+
+.THIS.notification {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 49rem;
+}
+
+@media screen and (min-width:300px) and (max-width:500px) {
+    .THIS.notification {
+
+        top: calc(100% + 12px);
+        left: 20rem;
+    }
+}

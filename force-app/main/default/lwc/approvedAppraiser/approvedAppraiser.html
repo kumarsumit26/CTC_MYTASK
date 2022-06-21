@@ -1,0 +1,57 @@
+<template>
+    <div class="slds-is-relative divWidth">
+        <div class="approvedAppraiser">
+            <div class="slds-grid " style="background-color: #ffffff">
+                <div class="slds-col  slds-medium-size_8-of-12 slds-large-size_9-of-12 ">
+                    <div class="'slds-p-around_large slds-col slds-size_3-of-3'' slds-col slds-size_3-of-3'">
+
+                        <h1 class="inputFont tabinputFont">List of approved appraisers </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div
+                    class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12 styleParagraph">
+                    <p class="textbelowInputlabel">Here is a list of all the appraisers that Community Trust Company
+                        works with. Appraisers can be selected based on the Municipality, Appraisal Firm or Appraiser of
+                        the property.</p>
+                    <lightning-input data-id="searchKey" name="enter-search" type="search"
+                        placeholder="Search for Province, Municipality, Appraisal Firm."
+                        onchange={searchKeyForMunicipality}></lightning-input>
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                    <lightning-datatable class="theader" data-id="dataTable" columns={columns} data={test}
+                        key-field={id} sortable="true" editable="true" min-column-width="150"
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                    <div style="background: white; padding: 28px 4px 20px 0px">
+                        <div class="slds-float_right">
+                            <div class="slds-grid">
+                                <div>
+                                    <p class="slds-page-header__title setPageNumber">
+
+                                        <!-- {pageNumber == 1? '1 - '+((pageNumber-1)*pageSize+dataSize): ((pageNumber-1)*pageSize)+' - '+((pageNumber-1)*pageSize+dataSize)} of {totalNumberOfRows} -->
+
+                                        <!--Page {!v.pageNumber} | Showing records from {!v.pageNumber == 1? '1 to '+((v.pageNumber-1)*v.pageSize+v.dataSize): 
+                                        ((v.pageNumber-1)*v.pageSize)+' to '+((v.pageNumber-1)*v.pageSize+v.dataSize)}-->
+                                    </p>
+                                </div>
+                                <div>
+                                    <lightning-button class="setPageBtn" icon-name="utility:chevronleft"
+                                        icon-position="left" onclick={handlePrev} disabled={disableButtonLeft}>
+                                    </lightning-button>
+                                    <lightning-button class="setPageBtn" icon-name="utility:chevronright"
+                                        icon-position="right" disabled={disableButtonRight} onclick={handleNext}>
+                                    </lightning-button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

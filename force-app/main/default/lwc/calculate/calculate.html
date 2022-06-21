@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="utility:favorite" size="small"> </lightning-icon>
+            Simple Interest Calculator
+        </h3>
+        <lightning-input label="Enter Amount :" onchange={NUM} name="Num1"></lightning-input>
+        <lightning-input label="Enter Term Invesment :" onchange={NUM} name="Num2"></lightning-input>
+        <lightning-input label="Enter Rate of Iterest :" onchange={NUM} name="Num3"></lightning-input>
+        <lightning-input label="The Interest Accumlated is :" onchange={NUM} name="Num4"></lightning-input>
+        <lightning-input label="The Total Amount at maturity :" onchange={NUM} name="Num5"></lightning-input>
+        <lightning-button-group>
+            <lightning-button label="Calculate" onclick={calculate}></lightning-button>
+            <lightning-button label="Clear" onclick={clear}></lightning-button>
+        </lightning-button-group>
+    </lightning-card>
+</template>

@@ -1,0 +1,28 @@
+<template>
+    <div class="divWidth slds-col slds-size_2-of-1">
+        <template if:true={showSpinner}>
+            <div class="backgroundInverse">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+        <template if:false={showSpinner}>
+            <h1 class="setRecentUpdate">Recent Updates</h1>
+            <template for:each={residentialMortgageHistoryList} for:item="RMHistory">
+                <div style="max-height: 460px; overflow-y: auto;" key={RMHistory.Id}>
+                    <c-update-card-details item={RMHistory}></c-update-card-details>
+                </div>
+            </template>
+            <div style="text-align:center;">
+                <template if:true={allDealupdate}> 
+                    <a href="" onclick={navigatetoDealUpdatesLess} class="viewAllUpdates">View less updates</a>
+                </template>
+                <template if:false={allDealupdate}> 
+                <div class="viewPad">
+                    <a href="" onclick={navigatetoDealUpdates} class="viewAllUpdates">View all</a>
+                </div>
+                </template>
+            </div>
+
+        </template>
+    </div>
+</template>

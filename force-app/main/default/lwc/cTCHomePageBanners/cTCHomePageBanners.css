@@ -1,0 +1,273 @@
+.forceContentFileCard {
+  width: 100% !important;
+  /*padding-bottom:8px;*/
+}
+
+/*  a.setTitle:hover {
+  text-decoration:unset;
+}*/
+.displayForDesktop>.slds-carousel {
+  margin-bottom: 24px;
+}
+
+.setTitle {
+  color: #B45004;
+  font-family: 'Calibri';
+  font-size: 16px;
+  padding: 5px 15px;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  text-align: center;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.slds-carousel__indicator-action.slds-button_neutral {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0px;
+}
+
+.slds-carousel__indicator-action.slds-button_brand {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0px;
+}
+
+.setPageBtn {
+  border: none;
+  background: transparent;
+}
+
+.slds-carousel__indicators {
+  position: relative;
+}
+
+.left button,
+.right button {
+  padding: 0px;
+}
+
+.left button:hover,
+.right button:hover,
+.left button:focus,
+.right button:focus {
+  background: unset;
+  box-shadow: unset;
+}
+
+.left,
+.right {
+  position: absolute;
+  bottom: 5px;
+}
+
+.left {
+  left: 15px;
+}
+
+.right {
+  right: 15px;
+}
+
+.forceContentFileCard .slds-truncate {
+  display: none !important;
+}
+
+.slds-button:disabled {
+  color: rgb(217, 219, 221);
+}
+
+.slds-image__crop img {
+  width: 100% !important;
+}
+
+.slds-file__crop img {
+  width: 100% !important;
+}
+
+.slds-image__crop {
+  padding-top: 0;
+}
+
+.slds-file__crop {
+  padding-top: 0;
+}
+
+.slds-file--card {
+  border-radius: 8px;
+  border: none;
+}
+
+.imgSize {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.promoBanners.displayForTab,
+.promoBanners.displayForMob {
+  display: none;
+}
+
+.slds-carousel__indicators li button {
+  width: 8px;
+  height: 8px;
+  background-color: #E16405;
+  padding: 0px;
+}
+
+@media only screen and (min-width:320px) and (max-width:500px) {
+
+  .promoBanners.displayForDesktop,
+  .promoBanners.displayForTab {
+    display: none;
+  }
+
+  .promoBanners.displayForMob {
+    display: block;
+    padding-bottom: 16px;
+  }
+
+  .slds-file__crop img {
+    width: 100% !important;
+  }
+
+  .slds-file__crop {
+    padding-top: 0;
+  }
+}
+
+@media only screen and (min-width:501px) and (max-width:767px) {
+
+  .promoBanners.displayForDesktop,
+  .promoBanners.displayForTab {
+    display: none;
+  }
+
+  .promoBanners.displayForMob {
+    display: block;
+    padding-bottom: 16px;
+  }
+
+  .slds-file__crop img {
+    width: 100% !important;
+  }
+
+  .slds-file__crop {
+    padding-top: 0;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+
+  .promoBanners.displayForDesktop,
+  .promoBanners.displayForMob {
+    display: none;
+  }
+
+  .promoBanners.displayForTab {
+    display: block;
+    padding-bottom: 24px;
+  }
+
+  .slds-file__crop img {
+    width: 100% !important;
+  }
+
+  .slds-file__crop {
+    padding-top: 0;
+  }
+}
+
+@media screen and (min-width:1024px) and (max-width:1324px) {
+
+  .promoBanners.displayForDesktop,
+  .promoBanners.displayForMob {
+    display: none;
+  }
+
+  .slds-file__crop img {
+    width: 100% !important;
+  }
+
+  .slds-file__crop {
+    padding-top: 0;
+  }
+
+  .promoBanners.displayForTab {
+    display: block;
+    padding-bottom: 24px;
+  }
+}
+
+.slds-clearfix {
+  margin-top: -33px;
+  padding-bottom: 7px;
+}
+
+.slds-carousel__stage {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.slds-carousel__indicator-action {
+  width: 8px;
+  height: 8px;
+  background: rgba(225, 100, 5, 0.4);
+  border: rgba(225, 100, 5, 0.4);
+}
+
+.slds-button_neutral {
+  border: none !important;
+}
+
+.slds-button_neutral.slds-button__icon {
+  fill: black !important;
+}
+
+.slds-carousel a.externalLink[href="javascript:void(0);"] {
+  cursor: default;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 100%;
+  width: auto;
+  padding: 16px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0 3px 3px 0;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+  text-indent: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #0000ff;
+  box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicators .active {
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+  background-color: #ffff99;
+}

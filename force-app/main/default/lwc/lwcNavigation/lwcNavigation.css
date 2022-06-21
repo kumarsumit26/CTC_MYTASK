@@ -1,0 +1,72 @@
+.navMargin {
+    position: absolute; margin: 24px 0px 0px 0px;width:23%; float:left;background: #f4f4f5;
+} 
+/* .showDeskTop {
+    display:block;
+} */
+.setNavg {
+    text-align: left;
+    font-family: 'Calibri';
+    letter-spacing: 0.7px;
+    color: #E2E2E2;
+}
+.navContainer {
+    float: left;
+    background: #4E4E4E!important;  
+    color: #fff!important;  
+    min-height:960px;
+} 
+div:focus{
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    background:none !important;
+}
+.navContainer li a {
+    background: none !important;
+}
+.slds-navigation-list--vertical__action{
+    font-size:16px;
+    font-family: 'Calibri' !important;
+    color: #E2E2E2 !important;
+}
+.slds-col .ui-widget {
+    margin: 16px 0;
+}
+
+.slds-col.content {
+    width: 1140px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width :767px) {
+    .showDeskTop {
+        display: none;
+    }
+    .setNavg{
+        text-align: left;
+        font: Bold 11/21px;
+        font-family: 'Calibri';
+        letter-spacing: 0.7px;
+        color: #E2E2E2;
+    }
+    .slds-navigation-list--vertical__action{
+        font: Bold 16/22px Calibri;
+        font-family: 'Calibri' !important;
+        color: #E2E2E2 !important;
+    }
+    .setSizesubItem{
+        font: Bold 16/22px Calibri;
+        font-family: 'Calibri' !important;
+        color: #E2E2E2 !important;
+    }
+    .slds-text-link--reset{
+        border-top: #000000 !important;
+        border-bottom: #000000 !important;
+        border-inline-start: #000000 !important;
+    }
+}
+@media only screen and (min-device-width :768px) and (max-device-width :1024px) {
+    .showDeskTop {
+        display: none;
+    }
+}

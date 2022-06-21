@@ -1,0 +1,667 @@
+input:hover,
+input:active,
+input:focus {
+    box-shadow: unset;
+}
+
+.approvedAppraiser {
+    background-color: #fff;
+    padding: 40px 24px;
+    border-radius: 8px;
+}
+
+.slds-cell-fixed {
+    position: inherit !important;
+}
+
+.paddingApproved {
+    padding: 16px 16px 0px 24px;
+}
+
+.slds-resizable__divider {
+    visibility: hidden;
+}
+
+.slds-table_header-fixed {
+    table-layout: fixed;
+    /*width: 100% !important;*/
+    /*overflow-x: scroll;*/
+    display: inline-block;
+    /*padding-left: 24px;*/
+}
+
+.slds-scrollable_y {
+    /* overflow:hidden !important;*/
+    width: 100% !important;
+    overflow: auto;
+
+}
+
+.setPageNumber {
+    padding: 4px 16px 0px 0px;
+    font-family: 'Calibri';
+    font-size: 14px;
+    color: #000000;
+}
+
+.setPageBtn {
+    border: none;
+    background: transparent;
+
+}
+
+.slds-button {
+    color: black;
+}
+
+.slds-button:disabled {
+    color: rgb(217, 219, 221);
+}
+
+.divWidth {
+    width: 100%;
+    height: fit-content;
+}
+
+.buttonStyle {
+    background: #F27A21;
+    border: #F27A21;
+}
+
+.marginButton {
+    margin-left: 50%;
+    margin-top: 1%;
+}
+
+.inputFont {
+    font-family: 'FranklinGothicHeavyRegular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #4E4E4E;
+    opacity: 1;
+    letter-spacing: 0px;
+    text-decoration: none solid rgb(0, 0, 0);
+    margin-bottom: 16px;
+
+}
+
+.slds-col {
+    background-color: white;
+}
+
+.slds-scrollable_x {
+
+    overflow: hidden !important;
+}
+
+.setpad {
+    padding-bottom: 102px;
+}
+
+.slds-input {
+    border-radius: 4px;
+    border-color: #e8eef2;
+    stroke-width: 1;
+    padding: 0 0 0 2.3em !important;
+    border-radius: 16px;
+}
+
+.setsize {
+    padding-top: 0px;
+    background-color: #f1f1f1;
+
+}
+
+.setparagraphsize {
+
+    background-color: #f1f1f1;
+
+}
+
+.setsearchSize {
+
+    background-color: #f1f1f1;
+
+}
+
+.header {
+    padding-bottom: 20px;
+}
+
+.siteforceThemeLayoutStarter {
+    background-color: #f1f1f1;
+}
+
+.slds-truncate {
+    text-align: left;
+    font-size: 14px;
+    font-family: Nunito, sans-serif;
+    letter-spacing: 0px;
+    color: #4E4E4E;
+    opacity: 1;
+}
+
+lightning-primitive-header-actions {
+    display: none;
+}
+
+.dataTable {
+    height: auto;
+}
+
+.slds-form-element__label {
+    text-align: left;
+
+    font-size: 20px;
+    font-family: 'FranklinGothicHeavyRegular';
+    font-style: normal;
+    letter-spacing: 0px;
+    color: #4E4E4E;
+    opacity: 1;
+}
+
+.table-test thead th span {
+    font-family: 'Calibri';
+    font-size: 12px;
+    color: #93a0b3;
+}
+
+.slds-form-element__control {
+    font-family: Calibri;
+    font-size: 12px;
+    width: 30%;
+    color: #93a0b3;
+    -webkit-text-fill-color: #93a0b3;
+    text-decoration: none solid rgb(147, 160, 179);
+    margin-top: 2%;
+}
+
+.textbelowInputlabel {
+    text-align: left;
+    font-size: 14px;
+    font-family: 'Calibri';
+    letter-spacing: -0.5px;
+    display: inline;
+    color: #4e4e4e;
+    opacity: 1;
+    /* padding-left: 8px;*/
+}
+
+.slds-row-number {
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Calibri';
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.slds-dropdown-trigger {
+    display: none;
+}
+
+.slds-th__action:last-child {
+    display: none;
+}
+
+.styleParagraph
+    {
+        padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom:0px;
+}
+
+
+@media screen and (min-width:320px) and (max-width:360px) {
+    .approvedAppraiser {
+        background-color: #fff;
+        padding: 24px 16px;
+        border-radius: 8px;
+    }
+
+    .paddingApproved {
+        padding: 16px 16px 0px 16px;
+    }
+
+    .tabinputFont {
+        font-family: 'FranklinGothicHeavyRegular';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: #4E4E4E;
+        opacity: 1;
+        letter-spacing: 0px;
+        text-decoration: none solid rgb(0, 0, 0);
+        /* padding-bottom: 16px;*/
+    }
+
+    .slds-table {
+        table-layout: auto;
+        width: 552px;
+    }
+
+    .textbelowInputlabel {
+        text-align: left;
+        font-size: 14px;
+        font-family: 'Calibri';
+        letter-spacing: 0px;
+        display: inline;
+        color: #4e4e4e;
+        opacity: 1;
+        padding-left: 0px;
+    }
+
+    .slds-form-element__control {
+        font-family: Calibri;
+        font-size: 12px;
+        width: 100%;
+        color: #93a0b3;
+        -webkit-text-fill-color: #93a0b3;
+        text-decoration: none solid rgb(147, 160, 179);
+        margin-top: 32px;
+
+    }
+
+    .marginButton {
+        /*  margin-left: 100%;*/
+        margin-top: 1%;
+    }
+
+    .divWidth {
+        padding: 0px 0px 16px 0px;
+
+    }
+
+    .inputFont {
+        font-family: 'FranklinGothicHeavyRegular';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: #4E4E4E;
+        opacity: 1;
+        letter-spacing: 0px;
+        text-decoration: none solid rgb(0, 0, 0);
+    }
+
+    .slds-input {
+        border-radius: 4px;
+        border-color: #e8eef2;
+        stroke-width: 1;
+        padding: 0 0 0 2.3em !important;
+        border-radius: 16px;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (min-width:361px) and (max-width:480px) {
+    .paddingApproved {
+        padding: 16px 16px 0px 16px;
+    }
+
+    .approvedAppraiser {
+        background-color: #fff;
+        padding: 24px 16px;
+        border-radius: 8px;
+    }
+
+    .tabinputFont {
+        font-family: 'FranklinGothicHeavyRegular';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: #4E4E4E;
+        opacity: 1;
+        letter-spacing: 0px;
+        text-decoration: none solid rgb(0, 0, 0);
+        /* padding-bottom: 16px;*/
+    }
+
+    .slds-table {
+        table-layout: auto;
+        width: 552px;
+    }
+
+    .textbelowInputlabel {
+        text-align: left;
+        font-size: 14px;
+        font-family: 'Calibri';
+        letter-spacing: 0px;
+        display: inline;
+        color: #4e4e4e;
+        opacity: 1;
+        padding-left: 0px;
+    }
+
+    .slds-form-element__control {
+        font-family: Calibri;
+        font-size: 12px;
+        width: 100%;
+        color: #93a0b3;
+        -webkit-text-fill-color: #93a0b3;
+        text-decoration: none solid rgb(147, 160, 179);
+        margin-top: 32px;
+
+    }
+
+    .marginButton {
+        /*  margin-left: 100%;*/
+        margin-top: 1%;
+    }
+
+    .divWidth {
+        padding: 0px 0px 16px 0px;
+
+    }
+
+    .inputFont {
+        font-family: 'FranklinGothicHeavyRegular';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: #4E4E4E;
+        opacity: 1;
+        letter-spacing: 0px;
+        text-decoration: none solid rgb(0, 0, 0);
+
+    }
+
+    .slds-input {
+        border-radius: 4px;
+        border-color: #e8eef2;
+        stroke-width: 1;
+        padding: 0 0 0 2.3em !important;
+        border-radius: 16px;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:767px) {
+    .paddingApproved {
+        padding: 16px 16px 0px 16px;
+    }
+
+    .approvedAppraiser {
+        background-color: #fff;
+        padding: 24px 16px;
+        border-radius: 8px;
+    }
+
+    .tabinputFont {
+        font-family: 'FranklinGothicHeavyRegular';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: #4E4E4E;
+        opacity: 1;
+        letter-spacing: 0px;
+        text-decoration: none solid rgb(0, 0, 0);
+        /* padding-bottom: 16px;*/
+    }
+
+    .slds-table {
+        table-layout: auto;
+        width: 552px;
+    }
+
+    .textbelowInputlabel {
+        text-align: left;
+        font-size: 14px;
+        font-family: 'Calibri';
+        letter-spacing: 0px;
+        display: inline;
+        color: #4e4e4e;
+        opacity: 1;
+        padding-left: 0px;
+    }
+
+    .slds-form-element__control {
+        font-family: 'Calibri';
+        font-size: 12px;
+        width: 43%;
+        color: #93a0b3;
+        -webkit-text-fill-color: #93a0b3;
+        text-decoration: none solid rgb(147, 160, 179);
+        margin-top: 32px;
+
+    }
+
+    .marginButton {
+        /*  margin-left: 100%;*/
+        margin-top: 1%;
+    }
+
+    .divWidth {
+        padding: 0px 0px 16px 0px;
+
+    }
+
+    .inputFont {
+        font-family: 'FranklinGothicHeavyRegular';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: #4E4E4E;
+        opacity: 1;
+        letter-spacing: 0px;
+        text-decoration: none solid rgb(0, 0, 0);
+        margin-bottom: 16px;
+
+    }
+
+    .slds-input {
+        border-radius: 4px;
+        border-color: #e8eef2;
+        stroke-width: 1;
+        padding: 0 0 0 2.3em !important;
+        border-radius: 16px;
+        text-overflow: ellipsis;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .inputFont {
+        font-family: 'FranklinGothicHeavyRegular';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        color: #4E4E4E;
+        opacity: 1;
+
+        text-decoration: none solid rgb(0, 0, 0);
+        margin-bottom: 24px;
+
+    }
+
+    .slds-form-element__control {
+        width: 45%;
+        padding-left: 0px;
+        font-family: 'Calibri';
+        font-size: 12px;
+        -webkit-text-fill-color: #93a0b3;
+        font-weight: bold;
+        text-decoration: none solid rgb(147, 160, 179);
+        margin-top: 2%;
+    }
+
+    .marginButton {
+        margin-left: 100%;
+        margin-top: 1%;
+    }
+
+    .textbelowInputlabel {
+        text-align: left;
+        font-size: 14px;
+        font-family: 'Calibri';
+        letter-spacing: 0px;
+        display: inline;
+        color: #4e4e4e;
+        opacity: 1;
+    }
+
+
+    .slds-input {
+        border-radius: 4px;
+        border-color: #e8eef2;
+        stroke-width: 1;
+        padding: 0 0 0 2.3em !important;
+        border-radius: 16px;
+        text-overflow: ellipsis;
+    }
+
+}
+
+
+
+@media screen and (min-width:1025px) and (max-width:1440px) {
+    .setPageNumber {
+        padding: 4px 16px 0px 0px;
+        font-family: 'Calibri';
+        font-size: 14px;
+        color: #4e4e4e;
+    }
+
+    .setPageBtn {
+        border: none;
+        background: transparent;
+    }
+
+    .divWidth {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .buttonStyle {
+        background: #F27A21;
+        border: #F27A21;
+    }
+
+    .marginButton {
+        margin-left: 50%;
+        margin-top: 1%;
+    }
+
+    .slds-col {
+        background-color: white;
+        padding-bottom: 0px;
+    }
+
+    .slds-scrollable_x {
+        overflow: hidden !important;
+
+    }
+
+    .setpad {
+        padding-bottom: 102px;
+    }
+
+    .slds-input {
+        border-radius: 4px;
+        border-color: #e8eef2;
+        stroke-width: 1;
+        padding: 0 0 0 2.3em !important;
+        border-radius: 16px;
+    }
+
+    .setsize {
+        padding-top: 0px;
+        background-color: #f1f1f1;
+
+    }
+
+    .setparagraphsize {
+
+        background-color: #f1f1f1;
+
+    }
+
+    .setsearchSize {
+
+        background-color: #f1f1f1;
+
+    }
+
+    .header {
+        padding-bottom: 20px;
+    }
+
+    .siteforceThemeLayoutStarter {
+        background-color: #f1f1f1;
+    }
+
+    .slds-truncate {
+        text-align: left;
+        font-size: 14px;
+        font-family: Calibri;
+        letter-spacing: 0px;
+        color: #4E4E4E;
+        opacity: 1;
+    }
+
+    lightning-primitive-header-actions {
+        display: none;
+    }
+
+    .dataTable {
+        height: auto;
+    }
+
+    .slds-form-element__label {
+        text-align: left;
+        font-weight: normal;
+        font-size: 20px;
+        font-family: 'FranklinGothicHeavyRegular';
+        font-style: normal;
+        letter-spacing: 0px;
+        color: #4E4E4E;
+        opacity: 1;
+    }
+
+    .table-test thead th span {
+        font-family: 'Calibri';
+        font-size: 12px;
+        color: #93a0b3;
+    }
+
+    .slds-form-element__control {
+        font-family: 'Calibri';
+        font-size: 12px;
+        width: 32%;
+        color: #93a0b3;
+        -webkit-text-fill-color: #93a0b3;
+        text-decoration: none solid rgb(147, 160, 179);
+        margin-top: 2%;
+        height: 33px;
+        float: left;
+    }
+
+    .textbelowInputlabel {
+        text-align: left;
+        font-size: 14px;
+        font-family: 'Calibri';
+
+        display: inline;
+        color: #4e4e4e;
+        opacity: 1;
+        padding-left: 0px;
+    }
+
+    .slds-row-number {
+        text-align: left;
+        font-size: 16px;
+        font-family: 'Calibri';
+        letter-spacing: 0px;
+        color: #4e4e4e;
+        opacity: 1;
+    }
+
+    .slds-dropdown-trigger {
+        display: none;
+    }
+
+    .slds-th__action:last-child {
+        display: none;
+    }
+
+}

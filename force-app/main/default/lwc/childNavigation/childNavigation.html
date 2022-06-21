@@ -1,0 +1,274 @@
+<template>
+
+    <template if:true={item.subMenu}>
+        <li onclick={navigateToMenu} class={customClass} key={item.Id} data-id="checkActive">
+            <a  href="javascript:void(0);" data-menu-item-id={item.id}
+                class="slds-navigation-list--vertical__action slds-text-link--reset setSize setResour">
+                <template if:true={item.active}>
+                    <template if:true={labelHome}>
+                        <a onclick={onClickIcon} data-attrival="Dashboard">
+                            <img src={dashboardActive}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+                <template if:false={item.active}>
+                    <template if:true={labelHome}>
+                        <a onclick={onClickIcon} data-attrival="Dashboard">
+                            <img src={dashboard}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+
+                <template if:true={item.active}>
+                    <template if:true={labelDeal}>
+                        <a onclick={onClickIcon} data-attrival="deal">
+                            <img src={dealActive}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+                    </template>
+                </template>
+                <template if:false={item.active}>
+                    <template if:true={labelDeal}>
+                        <a onclick={onClickIcon} data-attrival="deal">
+                            <img src={deal}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+                    </template>
+                </template>
+                <template if:true={labelResourcecentre}>
+                    <div class="slds-grid">
+                        <template if:true={item.active}>
+                            <div>
+                                <img src={resourceCentreActive}>
+
+                            </div>
+                        </template>
+                        <template if:false={item.active}>
+                            <div>
+                                <img src={resourceCentre}>
+
+                            </div>
+                        </template>
+                        <div style="width: 80%;">
+                            &nbsp;&nbsp;{item.label}
+                        </div>
+                        <div class="sub-menu">
+                            <lightning-icon icon-name="utility:chevrondown" alternative-text="RESOURCE CENTRE"
+                                title="Resource Centre" size="small">
+                            </lightning-icon>
+                        </div>
+                    </div>
+
+                    <ul class="showDropDown1" data-id="myDiv">
+                        <template for:each={item.subMenu} for:item="subItem">
+                            <li class={customClass} key={subItem.Id} data-id="checkActive">
+                                <div class="setSizesubItem">
+                                    <a href="javascript:void(0);" data-menu-item-id={subItem.id}
+                                        class="slds-navigation-list--vertical__action slds-text-link--reset ">
+                                        {subItem.label}
+                                    </a>
+                                </div>
+                            </li>
+
+                        </template>
+
+                    </ul>
+
+                </template>
+                <template if:true={item.active}>
+                    <template if:true={labelMessagecentre}>
+                        <a onclick={onClickIcon} data-attrival="messageCentre">
+                            <img src={messageCentreActive}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+                <template if:false={item.active}>
+                    <template if:true={labelMessagecentre}>
+                        <a onclick={onClickIcon} data-attrival="messageCentre">
+                            <img src={messageCentre}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+                <template if:true={item.active}>
+                    <template if:true={labelContactusActive}>
+                        <a onclick={onClickIcon} data-attrival="ContactUs">
+                            <img src={contactUs}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+                <template if:false={item.active}>
+                    <template if:true={labelContactus}>
+                        <a onclick={onClickIcon} data-attrival="ContactUs">
+                            <img src={contactUs}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+
+
+            </a>
+
+        </li>
+    </template>
+    <template if:false={item.subMenu}>
+        <li class={customClass} key={item.Id} onclick={navigateToMenuParent} data-id="checkActive">
+            <a  href="javascript:void(0);" data-menu-item-id={item.id}
+                class="slds-navigation-list--vertical__action slds-text-link--reset setSize setResour">
+                <template if:true={item.active}>
+                    <template if:true={labelHome}>
+                        <a onclick={onClickIcon} data-attrival="Dashboard">
+                            <img src={dashboardActive}>
+                        </a>
+                        &nbsp;&nbsp;
+                        {item.label}
+
+
+                    </template>
+                </template>
+                <template if:false={item.active}>
+                    <template if:true={labelHome}>
+                        <a onclick={onClickIcon} data-attrival="Dashboard">
+                            <img src={dashboard}>
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+                    </template>
+                </template>
+
+                <template if:true={item.active}>
+                    <template if:true={labelDeal}>
+                        <a onclick={onClickIcon} data-attrival="deal">
+                            <img src={dealActive}>
+                        </a>
+
+                        &nbsp;&nbsp; {item.label}
+                    </template>
+                </template>
+                <template if:false={item.active}>
+                    <template if:true={labelDeal}>
+                        <a onclick={onClickIcon} data-attrival="deal">
+
+                            <img src={deal}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+                    </template>
+                </template>
+                <template if:true={labelResourcecentre}>
+                    <div class="slds-grid">
+                        <template if:true={item.active}>
+                            <div>
+                                <img src={resourceCentreActive}>
+
+                            </div>
+                        </template>
+                        <template if:false={item.false}>
+                            <div>
+                                <img src={resourceCentre}>
+
+                            </div>
+                        </template>
+                        <div style="width: 80%;">
+                            &nbsp;&nbsp;{item.label}
+                        </div>
+                        <div class="" style="float: right; text-align: right;">
+                            <lightning-icon icon-name="utility:chevrondown" alternative-text="RESOURCE CENTRE"
+                                title="Resource Centre" size="small">
+                            </lightning-icon>
+                        </div>
+                    </div>
+                    <ul class="showDropDown">
+                        <template for:each={item.subMenu} for:item="subItem">
+                            <li class={customClass} key={subItem.Id}>
+                                <div class="setSizesubItem">
+                                    <a href="javascript:void(0);" data-menu-item-id={subItem.id}
+                                        class="slds-navigation-list--vertical__action slds-text-link--reset ">
+                                        {subItem.label}
+                                    </a>
+                                </div>
+                            </li>
+
+                        </template>
+
+                    </ul>
+                </template>
+                <template if:true={item.active}>
+                    <template if:true={labelMessagecentre}>
+                        <a onclick={onClickIcon} data-attrival="messageCentre">
+                            <img src={messageCentreActive}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+                <template if:false={item.active}>
+                    <template if:true={labelMessagecentre}>
+                        <a onclick={onClickIcon} data-attrival="messageCentre">
+                            <img src={messageCentre}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+                <template if:true={item.active}>
+                    <template if:true={labelContactus}>
+                        <a onclick={onClickIcon} data-attrival="ContactUs">
+                            <img src={contactUsActive}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+                <template if:false={item.active}>
+                    <template if:true={labelContactus}>
+                        <a onclick={onClickIcon} data-attrival="ContactUs">
+                            <img src={contactUs}>
+
+                        </a>
+                        &nbsp;&nbsp; {item.label}
+
+
+                    </template>
+                </template>
+
+
+            </a>
+        </li>
+    </template>
+
+
+
+</template>

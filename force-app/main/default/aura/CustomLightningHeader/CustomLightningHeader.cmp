@@ -1,0 +1,97 @@
+<aura:component extends="forceCommunity:navigationMenuBase"
+    implements="forceCommunity:themeLayout,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,forceCommunity:searchInterface"
+    access="global">
+    <aura:attribute name="isOpen" type="boolean" default="false" />
+    <aura:attribute name="checkDevice" type="boolean" default="false" />
+    <aura:attribute name="isMobile" type="boolean" default="false" />
+    <aura:attribute name="showRCTab" type="boolean" default="true" />
+    <aura:attribute name="openSearchBar" type="boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <header class="mainHeader">
+        <div class="headerPart">
+            <div class="deskTopIcon">
+                <img src="{!$Resource.BrokerMenuIcon}" onclick="{! c.openModel }" />
+                <!--style="min-width: min-content; padding: 0px 0px 16px 16px;"-->
+            </div>
+
+            <div class="mobileLogo">
+                <c:brokerDashboardLogo />
+            </div>
+            <div class="searchDesktop">
+
+                <div>
+                    <aura:if isTrue="{!v.openSearchBar}">
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                            <div class="">
+                                <div class="slds-modal__content slds-p-around_large" id="modal-content-id-1">
+                                    <div class="slds-grid">
+                                        <div class="slds-size_11-of-12">
+                                            <c:brokerSearchComponent />
+                                        </div>
+                                        <div class="slds-size_1-of-12">
+                                            <lightning:icon class="slds-p-left_medium slds-p-top_x-small"
+                                                iconName="utility:close" title="close" size="small"
+                                                onclick="{!c.closeSearchModel}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </aura:if>
+                </div>
+            </div>
+            <div class="showSearch hideSerach">
+                <c:brokerSearchComponent />
+            </div>
+            <ul class="notifications">
+                <li class="searchICon">
+                    <lightning:icon iconName="utility:search" title="search" size="small"
+                        onclick="{!c.openSearchModel}" />
+                </li>
+                <li class="updates styleNotification">
+                    <c:BrokerHeaderBellNotification />
+                </li>
+                <li class="updates setProfile">
+                    <c:brokerHeaderProfileCntl />
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!--Model window for navigation to mobile view -->
+    <aura:if isTrue="{!v.isOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="responsiveHeader slds-modal slds-fade-in-open">
+            <div class="">
+                <div class="slds-modal__content">
+                    <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                        <ul class="navContainer">
+                            <div class="slds-clearfix setNavigationHeader">
+                                <div class="slds-float_left slds-p-around_small">
+                                    <p><img src="{!$Resource.CTC_LOGO}" onclick="{!c.openModel}"
+                                            style="min-width: min-content;" /></p>
+                                </div>
+                                <div class="slds-float_right slds-p-around_small">
+                                    <p>
+                                    <p>
+                                        <lightning:icon iconName="utility:close" title="close"
+                                            onclick="{! c.closeModel }" />
+                                    </p>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slds-p-around_small setNavg">
+                                Navigation
+                            </div>
+                            <aura:iteration items="{!v.menuItems}" var="item">
+                                <c:childHeaderNavigation item="{!item}" onnavigateto="{!c.handleNavigation}" />
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open custombackDrop"></div>
+    </aura:if>
+</aura:component>

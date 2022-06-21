@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-is-relative container" >
+      <template for:each={slideData} for:item="slide">
+        <div key={slide.recordId} class={slide.slideClass}>
+          <!-- <div if:false={hideSlideNumber} class="slideNumbers">{slide.index}/{slideData.length}</div> -->
+          <img src={slide.url} style="width:100%;"/>  
+          ---->{slide.url}--->{slide.recordId}
+        </div>
+      </template>
+
+      <a if:false={hideNavigationButtons} class="prev" onclick={slideBackward}>&#10094;</a>
+      <a if:false={hideNavigationButtons} class="next" onclick={slideForward}>&#10095;</a>
+    </div>
+    <div if:false={hideNavigationDots} class="slds-text-align_center slds-p-around_medium">
+      <template for:each={slideData} for:item="slide">
+        {slide.index}----> {slide.dotClass}
+        <span key={slide.index} class={slide.dotClass} data-id={slide.index} onclick={showSlide}></span>
+      </template>
+    </div>
+    
+  </template>
